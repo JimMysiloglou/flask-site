@@ -28,7 +28,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               {% if tags %}
                   {% for tag in tags %}
-                  <li><a class="dropdown-item" href="{{ url_for('articles_by_tag', tag_id=tag.id) }}">{{ tag.name }}</a></li>
+                  <li><a class="dropdown-item" href="{{ url_for('blog.articles_by_tag', tag_id=tag.id) }}">{{ tag.name }}</a></li>
                   {% endfor %}
               {% else %}
               {% endif %}
@@ -51,7 +51,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
             <div class="col-md-6 mb-4">
               <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
                 <img src="{{ url_for('static', filename='images/article_images/'+first_article.article_image) }}" class="img-fluid" />
-                <a href="{{ url_for('full_article', article_id=first_article.id) }}">
+                <a href="{{ url_for('blog.full_article', article_id=first_article.id) }}">
                   <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                 </a>
               </div>
@@ -68,14 +68,14 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
               <div class="row mb-3 align-items-center">
                 <div class="col-6 d-flex">
                   {% for tag in first_article.tags %}
-                    <a href="{{ url_for('articles_by_tag', tag_id=tag.id) }}" class="pe-2">{{ tag.name }}</a>
+                    <a href="{{ url_for('blog.articles_by_tag', tag_id=tag.id) }}" class="pe-2">{{ tag.name }}</a>
                   {% endfor %}
                 </div>
                 <div class="col-6 text-end pe-5">
                   <u>{{ first_article.date_created.strftime("%Y-%m-%d") }}</u>
                 </div>
               </div>
-              <a href="{{ url_for('full_article', article_id=first_article.id) }}">
+              <a href="{{ url_for('blog.full_article', article_id=first_article.id) }}">
                 <button type="button" class="btn btn-primary">Read more</button>
               </a>
             </div>
@@ -98,7 +98,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
                                   <div class="card">
                                   <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                       <img src="{{ url_for('static', filename='images/article_images/'+row[0].article_image) }}" class="img-fluid" />
-                                      <a href="{{ url_for('full_article', article_id=row[0].id) }}">
+                                      <a href="{{ url_for('blog.full_article', article_id=row[0].id) }}">
                                       <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                       </a>
                                   </div>
@@ -107,7 +107,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
                                   <div class="row my-1 align-items-center">
                                     <div class="col-6 d-flex">
                                       {% for tag in row[0].tags %}
-                                        <a href="{{ url_for('articles_by_tag', tag_id=tag.id) }}" class="pe-2">{{ tag.name }}</a>
+                                        <a href="{{ url_for('blog.articles_by_tag', tag_id=tag.id) }}" class="pe-2">{{ tag.name }}</a>
                                       {% endfor %}
                                     </div>
                                     <div class="col-6 text-end">
@@ -119,7 +119,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
                                       <p class="card-text">
                                           {{ row[0].article_description | safe }}
                                       </p>
-                                      <a href="{{ url_for('full_article', article_id=row[0].id) }}" class="btn btn-primary">Read</a>
+                                      <a href="{{ url_for('blog.full_article', article_id=row[0].id) }}" class="btn btn-primary">Read</a>
                                   </div>
                                   </div>
                               </div>
@@ -130,7 +130,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
                                   <div class="card">
                                   <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                       <img src="{{ url_for('static', filename='images/article_images/'+row[1].article_image) }}" class="img-fluid" />
-                                      <a href="{{ url_for('full_article', article_id=row[1].id) }}">
+                                      <a href="{{ url_for('blog.full_article', article_id=row[1].id) }}">
                                       <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                       </a>
                                   </div>
@@ -139,7 +139,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
                                   <div class="row my-1 align-items-center">
                                     <div class="col-6 d-flex">
                                       {% for tag in row[1].tags %}
-                                        <a href="{{ url_for('articles_by_tag', tag_id=tag.id) }}" class="pe-2">{{ tag.name }}</a>
+                                        <a href="{{ url_for('blog.articles_by_tag', tag_id=tag.id) }}" class="pe-2">{{ tag.name }}</a>
                                       {% endfor %}
                                     </div>
                                     <div class="col-6 text-end">
@@ -151,7 +151,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
                                       <p class="card-text">
                                           {{ row[1].article_description | safe }}
                                       </p>
-                                      <a href="{{ url_for('full_article', article_id=row[1].id) }}" class="btn btn-primary">Read</a>
+                                      <a href="{{ url_for('blog.full_article', article_id=row[1].id) }}" class="btn btn-primary">Read</a>
                                   </div>
                                   </div>
                               </div>
@@ -162,7 +162,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
                                   <div class="card">
                                   <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                       <img src="{{ url_for('static', filename='images/article_images/'+row[2].article_image) }}" class="img-fluid" />
-                                      <a href="{{ url_for('full_article', article_id=row[2].id) }}">
+                                      <a href="{{ url_for('blog.full_article', article_id=row[2].id) }}">
                                       <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                       </a>
                                   </div>
@@ -171,7 +171,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
                                   <div class="row my-1 align-items-center">
                                     <div class="col-6 d-flex">
                                       {% for tag in row[2].tags %}
-                                        <a href="{{ url_for('articles_by_tag', tag_id=tag.id) }}" class="pe-2">{{ tag.name }}</a>
+                                        <a href="{{ url_for('blog.blog.articles_by_tag', tag_id=tag.id) }}" class="pe-2">{{ tag.name }}</a>
                                       {% endfor %}
                                     </div>
                                     <div class="col-6 text-end">
@@ -183,7 +183,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
                                       <p class="card-text">
                                           {{ row[2].article_description | safe }}
                                       </p>
-                                      <a href="{{ url_for('full_article', article_id=row[2].id) }}" class="btn btn-primary">Read</a>
+                                      <a href="{{ url_for('blog.blog.full_article', article_id=row[2].id) }}" class="btn btn-primary">Read</a>
                                   </div>
                                   </div>
                               </div>

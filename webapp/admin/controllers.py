@@ -1,6 +1,6 @@
 from .forms import LoginForm, AccountUpdateForm, CKTextAreaField
 from flask_admin.contrib.sqla import ModelView
-from flask_admin import BaseView, expose, AdminIndexView
+from flask_admin import expose, AdminIndexView
 from flask_login import login_required, current_user, login_user, logout_user
 from PIL import Image
 import os, secrets
@@ -9,14 +9,14 @@ from .. import db
 from webapp.auth.models import User
 from flask_admin.form import SecureForm, ImageUploadField
 
-basedir = os.path.abspath(os.path.dirname(__file__))
+
 
 # The size variable is a tuple like (640, 480)
 def image_save(image, where, size):
     random_filename = secrets.token_hex(12)
     _, file_extension = os.path.splitext(image.filename)
     image_filename = random_filename + file_extension
-    image_path = os.path.join(basedir, 'static/images', where, image_filename)
+    image_path = os.path.join('../static', 'images', where, image_filename)
 
     img = Image.open(image)
     img.thumbnail(size)
@@ -100,29 +100,23 @@ def prefix_name(obj, file_data):
     return random_filename + file_extension
 
 
-profile_images_path = os.path.join(basedir, 'static/images/profile_images')
-
 class UserAdminView(CustomModelView):
     form_overrides = dict(profile_image=ImageUploadField)
-    form_args = dict(profile_image={'base_path': profile_images_path, 'namegen':prefix_name})
+    form_args = dict(profile_image={'base_path': 'static/images/profile_images', 'namegen':prefix_name, 'url_relative_path':'images/profile_images/'})
     form_base_class = SecureForm
 
 
-article_images_path = os.path.join(basedir, 'static/images/article_images')
-
 class ArticleAdminView(CustomModelView):
     form_overrides = dict(article_body=CKTextAreaField, article_image=ImageUploadField)
-    form_args = dict(article_image={'base_path': article_images_path, 'namegen':prefix_name})
+    form_args = dict(article_image={'base_path': 'static/images/article_images', 'namegen':prefix_name, 'url_relative_path':'images/article_images/'})
     form_base_class = SecureForm
     create_template = 'admin/edit_article.html'
     edit_template = 'admin/edit_article.html'
 
 
-project_images_path = os.path.join(basedir, 'static/images/project_images')
-
 class ProjectAdminView(CustomModelView):
     form_overrides = dict(project_body=CKTextAreaField, project_image=ImageUploadField)
-    form_args = dict(project_image={'base_path': project_images_path, 'namegen':prefix_name})
+    form_args = dict(project_image={'base_path': 'static/images/project_images', 'namegen':prefix_name, 'url_relative_path':'images/project_images/'})
     form_base_class = SecureForm
     create_template = 'admin/edit_project.html'
     edit_template = 'admin/edit_project.html'

@@ -34,7 +34,7 @@ style="background-image: url('/static/images/by_tag_jumbotron.jpg');">
                           <div class="col-md-4 mb-4">
                               <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
                               <img src="{{ url_for('static', filename='images/article_images/' + article.article_image) }}" class="img-fluid" />
-                              <a href="{{ url_for('full_article', article_id=article.id) }}">
+                              <a href="{{ url_for('blog.full_article', article_id=article.id) }}">
                                   <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                               </a>
                               </div>
@@ -46,7 +46,7 @@ style="background-image: url('/static/images/by_tag_jumbotron.jpg');">
                                   {{ article.article_description }}
                               </p>
   
-                              <a href="{{ url_for('full_article', article_id=article.id) }}" type="button" class="btn btn-primary">Read</a>
+                              <a href="{{ url_for('blog.full_article', article_id=article.id) }}" type="button" class="btn btn-primary">Read</a>
                           </div>
                       </div>
                   {% endfor %}

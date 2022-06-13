@@ -68,7 +68,7 @@ style="background-image: url('/static/images/portfolio_jumbotron.jpg');">
                         <div class="card">
                             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                             <img src="{{ url_for('static', filename='images/project_images/'+row[0].project_image) }}" class="img-fluid" />
-                            <a href="{{ url_for('full_project', project_id=row[0].id) }}">
+                            <a href="{{ url_for('portfolio.full_project', project_id=row[0].id) }}">
                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                             </a>
                             </div>
@@ -77,7 +77,7 @@ style="background-image: url('/static/images/portfolio_jumbotron.jpg');">
                             <p class="card-text">
                                 {{ row[0].project_description }}
                             </p>
-                            <a href="{{ url_for('full_project', project_id=row[0].id) }}" class="btn btn-primary">Button</a>
+                            <a href="{{ url_for('portfolio.full_project', project_id=row[0].id) }}" class="btn btn-primary">Button</a>
                             </div>
                         </div>
                         </div>
@@ -88,7 +88,7 @@ style="background-image: url('/static/images/portfolio_jumbotron.jpg');">
                             <div class="card">
                                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                 <img src="{{ url_for('static', filename='images/project_images/'+row[1].project_image) }}" class="img-fluid" />
-                                <a href="{{ url_for('full_project', project_id=row[1].id) }}">
+                                <a href="{{ url_for('portfolio.full_project', project_id=row[1].id) }}">
                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                 </a>
                                 </div>
@@ -97,7 +97,7 @@ style="background-image: url('/static/images/portfolio_jumbotron.jpg');">
                                 <p class="card-text">
                                     {{ row[1].project_description }}
                                 </p>
-                                <a href="{{ url_for('full_project', project_id=row[1].id) }}" class="btn btn-primary">Button</a>
+                                <a href="{{ url_for('portfolio.full_project', project_id=row[1].id) }}" class="btn btn-primary">Button</a>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +108,7 @@ style="background-image: url('/static/images/portfolio_jumbotron.jpg');">
                         <div class="card">
                             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                             <img src="{{ url_for('static', filename='images/project_images/'+row[0].project_image) }}" class="img-fluid" />
-                            <a href="{{ url_for('full_project', project_id=row[0].id) }}">
+                            <a href="{{ url_for('portfolio.full_project', project_id=row[0].id) }}">
                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                             </a>
                             </div>
@@ -117,7 +117,7 @@ style="background-image: url('/static/images/portfolio_jumbotron.jpg');">
                             <p class="card-text">
                                 {{ row[0].project_description }}
                             </p>
-                            <a href="{{ url_for('full_project', project_id=row[0].id) }}" class="btn btn-primary">Button</a>
+                            <a href="{{ url_for('portfolio.full_project', project_id=row[0].id) }}" class="btn btn-primary">Button</a>
                             </div>
                         </div>
                     </div>

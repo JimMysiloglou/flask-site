@@ -42,7 +42,7 @@ class Comment(db.Model):
     avatar_hash = db.Column(db.String(32))
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
     article_id = db.Column(db.Integer, db.ForeignKey('article.id'))
-    #project_id = db.Column(db.Integer, db.ForeignKey('project.id'))
+    project_id = db.Column(db.Integer, db.ForeignKey('project.id'))
 
     def gravatar_hash(self):
         return hashlib.md5(self.email.lower().encode('utf-8')).hexdigest()

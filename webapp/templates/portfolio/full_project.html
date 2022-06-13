@@ -55,10 +55,10 @@
   
               <div class="row align-items-center mb-4">
                 <div class="col-lg-8 text-center text-lg-start mb-3 m-lg-0">
-                  <img src="{{ url_for('static', filename='images/profile_images/'+ project.creator.profile_image) }}" class="rounded-5 shadow-1-strong me-2"
+                  <img src="{{ url_for('static', filename='images/profile_images/'+ project.author.profile_image) }}" class="rounded-5 shadow-1-strong me-2"
                     height="35" alt="" loading="lazy" />
                   <span> Published <u>{{ project.date_created.strftime("%Y-%m-%d") }}</u> by</span>
-                  <a href="" class="text-dark">{{ project.creator.name }}</a>
+                  <a href="" class="text-dark">{{ project.author.name }}</a>
                 </div>
                 {% if project.github_link %}
                 <div class="col-lg-3 text-center text-lg-end">
@@ -105,7 +105,7 @@
                   <!-- Comment -->
                   <div class="row mb-4">
                     <div class="col-2">
-                      <img src="{{ url_for('static', filename='images/profile_images/'+ comment.thumbnail) }}"
+                      <img src="{{ comment.gravatar(size=256) }}"
                         class="img-fluid shadow-1-strong rounded-5" alt="" />
                     </div>
       
@@ -173,20 +173,6 @@
                         {% else %}
                           {{ form.email(class="form-control") }}
                           {{ form.email.label(class="form-label") }}
-                        {% endif %}
-                      </div>
-
-                      <!-- Thumbnail -->
-                      <div class="mb-4">
-                        {% if form.thumbnail.errors %}
-                          {{ form.thumbnail(class="form-control is-invalid") }}
-                          {{ form.thumbnail.label(class="form-label") }}
-                          {% for error in form.thumbnail.errors %}
-                            <div class="invalid-feedback mb-5">{{ error }}</div>
-                          {% endfor %}
-                        {% else %}
-                          {{ form.thumbnail(class="form-control") }}
-                          {{ form.thumbnail.label(class="form-label") }}
                         {% endif %}
                       </div>
           

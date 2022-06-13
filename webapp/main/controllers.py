@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, request
+from webapp.blog.models import Article
 
 main_blueprint = Blueprint(
     'main',

@@ -1,12 +1,9 @@
-from datetime import datetime
 from flask import (
     render_template,
     Blueprint,
     flash,
     redirect,
     url_for,
-    session,
-    abort,
     request
 )
 from .models import Article, Comment, Tag, db
@@ -64,6 +61,6 @@ def full_article(article_id):
         db.session.commit()
 
         flash("The comment has posted successfully", "success")
-        return redirect(url_for("full_article", article_id=article_id, _anchor='comments'))
+        return redirect(url_for("blog.full_article", article_id=article_id, _anchor='comments'))
     
     return render_template("full_article.html", article=article, form=form)
