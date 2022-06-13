@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {{ project.title }}
+    </title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+
+    <!-- Material Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mdb.min.css') }}">
+
+    <!-- My stylesheet -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+
+</head>
+
+<body data-mdb-spy="scroll"
+      data-mdb-target="#scrollspy"
+      data-mdb-offset="180"
+      class="full-article">
+    <header>
+        {% include "navbar.html" %}
+
+        <!-- Background image -->
+        <div class="p-4 text-center bg-light" style="margin-top: 60px;">
+          <h1 class="mb-0 h4">{{ project.project_title }}</h1>
+      </div>
+        <!-- Background image -->
+    </header>
+    <main class="mt-4 mb-5">
+      <div class="container">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-md-8 offset-md-1 mb-4">
+            <!--Section: Post data-mdb-->
+            <section id="start" class="border-bottom mb-4">
+              <img src="{{ url_for('static', filename='images/project_images/'+ project.project_image) }}"
+                class="img-fluid shadow-2-strong rounded-5 mb-4" alt="" />
+  
+              <div class="row align-items-center mb-4">
+                <div class="col-lg-8 text-center text-lg-start mb-3 m-lg-0">
+                  <img src="{{ url_for('static', filename='images/profile_images/'+ project.creator.profile_image) }}" class="rounded-5 shadow-1-strong me-2"
+                    height="35" alt="" loading="lazy" />
+                  <span> Published <u>{{ project.date_created.strftime("%Y-%m-%d") }}</u> by</span>
+                  <a href="" class="text-dark">{{ project.creator.name }}</a>
+                </div>
+                {% if project.github_link %}
+                <div class="col-lg-3 text-center text-lg-end">
+                  <a href="{{ project.github_link }}" type="button" class="btn btn-primary px-3 me-1" style="background-color: #3b5998;">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+                {% endif %}
+              </div>
+            </section>
+            <!--Section: Post data-mdb-->
+  
+            <!--Section: Text-->
+            <section id="content">
+              {{ project.project_body | safe }}
+            </section>
+            <!--Section: Text-->
+  
+            <!--Section: Share buttons-->
+            <section class="text-center border-top border-bottom py-4 mb-4">
+              <p><strong>Share with your friends:</strong></p>
+  
+              <button type="button" class="btn btn-primary me-1" style="background-color: #3b5998;">
+                <i class="fab fa-facebook-f"></i>
+              </button>
+              <a href="https://twitter.com/intent/tweet?url=http://127.0.0.1:5000/blog/full_project/{{ project.id }}" type="button" class="btn btn-primary me-1" style="background-color: #55acee;">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <button type="button" class="btn btn-primary me-1" style="background-color: #0082ca;">
+                <i class="fab fa-linkedin"></i>
+              </button>
+              <button type="button" class="btn btn-primary me-1">
+                <i class="fas fa-comments me-2"></i>Add comment
+              </button>
+            </section>
+            <!--Section: Share buttons-->
+  
+            <!--Section: Comments-->
+            <section id="comments" class="border-bottom mb-3">
+              <p class="text-center"><strong>Comments: {{ project.comments | length }}</strong></p>
+              
+              {% if project.comments %}
+                {% for comment in project.comments %}
+                  <!-- Comment -->
+                  <div class="row mb-4">
+                    <div class="col-2">
+                      <img src="{{ url_for('static', filename='images/profile_images/'+ comment.thumbnail) }}"
+                        class="img-fluid shadow-1-strong rounded-5" alt="" />
+                    </div>
+      
+                    <div class="col-10">
+                      <p class="mb-2"><strong>{{ comment.author }}</strong></p>
+                      <p>
+                        {{ comment.text | safe }}
+                      </p>
+                    </div>
+                  </div>
+                {% endfor %}
+              {% endif %}
+              
+            </section>
+            <!--Section: Comments-->
+            <!-- Flash messages -->
+            <div class="container">
+              <div class="row">
+                  <div class="col-md-12">
+                      {% with messages = get_flashed_messages(with_categories=true) %}
+                          {% if messages %}
+                              {% for category, message in messages %}
+                              <div class="alert alert-{{ category }} alert-dismissible  fade show" role="alert" data-mdb-color="{{ category }}">
+                                  <strong>{{ message | safe }}</strong>
+                                  <button type="button" class="btn-close btn-{{ category }}" data-mdb-dismiss="alert" aria-label="Close"></button>
+                              </div>
+                              {% endfor %}
+                          {% endif %}
+                      {% endwith %}
+                  </div>
+              </div>
+            </div>
+            <!-- Flash messages -->
+
+            <!--Section: Reply-->
+            <section>
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-md-8">
+                    <p class="text-center"><strong>Leave a comment</strong></p>
+                        <form method="POST" enctype="multipart/form-data">
+                          {{ form.hidden_tag() }}
+                      <!-- Name input -->
+                      <div class="form-outline mb-5">
+                        {% if form.author.errors %}
+                          {{ form.author(class="form-control is-invalid") }}
+                          {{ form.author.label(class="form-label") }}
+                          {% for error in form.author.errors %}
+                            <div class="invalid-feedback mb-5">{{ error }}</div>
+                          {% endfor %}
+                        {% else %}
+                          {{ form.author(class="form-control") }}
+                          {{ form.author.label(class="form-label") }}
+                        {% endif %}
+                      </div>
+
+                      <!-- Email input -->
+                      <div class="form-outline mb-5">
+                        {% if form.email.errors %}
+                          {{ form.email(class="form-control is-invalid") }}
+                          {{ form.email.label(class="form-label") }}
+                          {% for error in form.email.errors %}
+                            <div class="invalid-feedback mb-5">{{ error }}</div>
+                          {% endfor %}
+                        {% else %}
+                          {{ form.email(class="form-control") }}
+                          {{ form.email.label(class="form-label") }}
+                        {% endif %}
+                      </div>
+
+                      <!-- Thumbnail -->
+                      <div class="mb-4">
+                        {% if form.thumbnail.errors %}
+                          {{ form.thumbnail(class="form-control is-invalid") }}
+                          {{ form.thumbnail.label(class="form-label") }}
+                          {% for error in form.thumbnail.errors %}
+                            <div class="invalid-feedback mb-5">{{ error }}</div>
+                          {% endfor %}
+                        {% else %}
+                          {{ form.thumbnail(class="form-control") }}
+                          {{ form.thumbnail.label(class="form-label") }}
+                        {% endif %}
+                      </div>
+          
+
+                      <!-- Comment input -->
+                      <div class="form-outline mb-5">
+                          {% if form.text.errors %}
+                            {{ form.text(class="form-control is-invalid") }}
+                            {{ form.text.label(class="form-label") }}
+                            {% for error in form.text.errors %}
+                              <div class="invalid-feedback mb-5">{{ error }}</div>
+                            {% endfor %}
+                          {% else %}
+                            {{ form.text(class="form-control") }}
+                            {{ form.text.label(class="form-label") }}
+                          {% endif %}
+                      </div>
+                      
+
+                      <!-- Submit button -->
+                      {{ form.submit(class="btn btn-primary btn-block") }}
+                      </form>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!--Section: Reply-->
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-md-2 mb-4">
+            <!-- Scrollspy -->
+              <div id="scrollspy" class="sticky-top d-sm-none d-md-block" style="top: 80px;">
+                <ul class="nav flex-column nav-pills menu-sidebar">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#start">Start</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#content">Content</a>
+                    {% if project.sections %}
+                    <ul class="nav flex-column ps-3">
+                      {% for section in project.sections %}
+                        <li class="nav-item">
+                          <a class="nav-link" href="#{{ section.section }}">{{ section.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                    {% endif %}
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#comments">Comments</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- Scrollspy -->
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+        
+    </main>
+  {% include "footer.html" %}
+
+    <!-- MDB -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/mdb.min.js') }}"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/my_script.js') }}"></script>
+</body>
+
+</html>

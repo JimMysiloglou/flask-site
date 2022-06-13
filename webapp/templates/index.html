@@ -1,0 +1,340 @@
+{% extends "base.html" %}
+
+{% block title %}
+    About
+{% endblock title %}
+
+{% block jumbotron %}
+<div id="intro"
+class="text-center bg-image shadow-3-strong"
+style="background-image: url('/static/images/index_jumbotron.jpg');">
+<div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+  <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="text-white">
+          <h1 class="mb-3">Mysiloglou Dimitrios</h1>
+              <h5 class="mb-4">Aspirant Data Scientist</h5>
+          <a class="btn btn-outline-light btn-lg m-2"
+          href="#"
+          role="button"
+          >Download CV</a>
+          <a class="btn btn-outline-light btn-lg m-2"
+          href=""
+          role="button"
+          >Contact Me</a>
+      </div>
+  </div>
+</div>
+</div>
+<!-- Background image -->
+{% endblock jumbotron %}
+
+{% block content %}
+<main>
+    <div class="container">
+        <!--About section-->
+        <section class="text-center" id="about-sector">
+          <h3 class="mt-5"><strong>About me</strong></h3>
+          <div class="row">
+            <div class="col-md-6 mb-4 px-4">
+              <img src="{{ url_for('static', filename='images/photo.jpg') }}"
+              class="rounded-circle shadow-1-strong mb-4" id="my-photo" alt="Avatar">
+              <p>
+                Welcome to my blog!<br>
+                My studies are in economics and in this blog, I will mainly document 
+                my learning journey into data analysis through python 
+                and other BI tools.
+                My other interests are in web development and Raspberry Pi projects.<br>
+                Thank you for visiting!
+              </p>
+              <a class="btn btn-primary btn-floating m-1" style="background-color: #0376a8;" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+              <a class="btn btn-primary btn-floating m-1" style="background-color: #171515;" href="#!" role="button"><i class="fab fa-github"></i></a>
+              <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="row"><i class="far fa-calendar pe-2 text-muted"></i> Age</th>
+                    <td>34</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><i class="far fa-envelope pe-2 text-muted"></i> Email</th>
+                    <td>mysiloglou@gmail.com</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><i class="fas fa-phone pe-2 text-muted"></i> Cellphone</th>
+                    <td>6909243815</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><i class="fas fa-map-marker-alt pe-2 text-muted"></i> Address</th>
+                    <td>Piraues - Greece</td>
+                  </tr>
+                </tbody>
+              </table>
+            
+            </div>
+            <div class="col-md-6 mb-4 align-self-center">
+              <!-- First row -->
+              <p><strong>Proficient (4+ years):</strong></p>
+              <div class="row">
+                <div class="col-md-4 mb-4">
+                  <i class="fab fa-python fa-3x m-2"></i>
+                  <p>Python</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <i class="fas fa-database fa-3x m-2"></i>
+                  <p>SQL</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                  <i class="fa-solid fa-table fa-3x m-2"></i>
+                  <p>Microsoft Excel</p>
+                </div>
+              </div>
+              <!-- First row -->
+    
+              <!-- Second row -->
+              <p><strong>Good (2+ years):</strong></p>
+              <div class="row justify-content-center">
+            
+                <div class="col-md-4 mb-4">
+                  <i class="fa-brands fa-html5 fa-3x m-2"></i>
+                  <p>HTML</p>
+                </div>
+    
+                <div class="col-md-4 mb-4">
+                  <i class="fa-brands fa-css3-alt fa-3x m-2"></i>
+                  <p>CSS3</p>
+                </div>
+    
+                <div class="col-md-4 mb-4">
+                  <i class="fa-brands fa-js fa-3x m-2"></i>
+                  <p>Javascript</p>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <i class="fa-solid fa-chart-pie fa-3x m-2"></i>
+                    <p>Tableau</p>
+                  </div>
+              </div>
+              <!-- Second row -->
+    
+              <!-- Third row -->
+              <p><strong>Learning (1+ year):</strong></p>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <i class="fa-solid fa-chart-column fa-3x m-2"></i>
+                  <p>Power BI</p>
+                </div>
+    
+                <div class="col-md-6 mb-4">
+                  <i class="fas fa-terminal fa-3x m-2"></i>
+                  <p>Unix</p>
+                </div>
+
+                
+              </div>
+              <!-- Third row -->
+            </div>
+          </div>
+        </section>
+        <!--About section-->
+        <hr class="my-5" />
+        <!--Skills section-->
+        <section id="skills-sector">
+          <h3 class="my-4 text-center"><strong>Education and Work Experience</strong></h3>
+          <div class="row justify-content-center">
+            
+            <div class="card m-2 col-lg-5 col-11">
+                <div class="card-body">
+                    <span class="timeline-icon">
+                        <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
+                    </span>
+                    <h5 class="fw-bold">Proficiency in English</h5>
+                    <p class="text-muted mb-2 fw-bold">March 2005</p>
+                    <p class="text-muted">
+                        Certificate of Proficiency in English<br>
+                        offered by <em>University of Michigan</em>
+                    </p>
+                </div>
+            </div>  
+
+                <div class="card m-2 col-lg-5 col-11">
+                    <div class="card-body">
+                        <span class="timeline-icon">
+                            <i class="fas fa-graduation-cap text-primary fa-sm fa-fw"></i>
+                        </span>
+                        <h5 class="fw-bold">Business Economics and Finance</h5>
+                        <p class="text-muted mb-2 fw-bold">April 2014</p>
+                        <p class="text-muted">
+                            Bachelor degree in the department of economics science<br>
+                            by Athens University of Economics and Business.
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="card m-2 col-lg-5 col-11">
+                    <div class="card-body">
+                        <span class="timeline-icon">
+                            <i class="fas fa-briefcase text-primary fa-sm fa-fw"></i>
+                        </span>
+                        <h5 class="fw-bold">Full time agent (banking sector)</h5>
+                        <p class="text-muted mb-2 fw-bold">April 2016</p>
+                        <p class="text-muted">
+                            Mellon Contact Services.<br>
+                            Contacting customers over overdue payments and advise them on alternative payment plans. 
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="card m-2 col-lg-5 col-11">
+                    <div class="card-body">
+                        <span class="timeline-icon">
+                            <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
+                        </span>
+                        <h5 class="fw-bold">Python Programming</h5>
+                        <p class="text-muted mb-2 fw-bold">June 2019</p>
+                        <p class="text-muted">
+                            CS1.1: Introduction to Python<br>
+                            CS1.2: Advanced programming in Python<br>
+                            offered by <em>Mathesis MOOCs, developed in Crete University Press of the Foundation for Research and Technology - Hellas.</em>
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="card m-2 col-lg-5 col-11">
+                    <div class="card-body">
+                        <span class="timeline-icon">
+                            <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
+                        </span>
+                        <h5 class="fw-bold">Applied Data Science Module</h5>
+                        <p class="text-muted mb-2 fw-bold">March 2020</p>
+                        <p class="text-muted">
+                            CS1.1: Scientific Computing and Python for Data Science<br>
+                            CS1.2: Machine Learning and Statistical Analysis<br>
+                            by <em>WorldQuant University in partnership with the Data Incubator.</em>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card m-2 col-lg-5 col-11">
+                    <div class="card-body">
+                        <span class="timeline-icon">
+                        <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
+                        </span>
+                        <h5 class="fw-bold">Statistics with Python Specialization</h5>
+                        <p class="text-muted mb-2 fw-bold">December 2020</p>
+                        <p class="text-muted">
+                        CS1.1: Understanding and Visualizing Data with Python<br>
+                        CS1.2: Inferential Statistical Analysis with Python<br>
+                        CS1.3: Fitting Statistical Models to Data with Python<br>
+                        by <em>University of Michigan in partnership with Coursera MOOCs.</em>
+                        </p>
+                    </div>
+                  </div>
+
+                  <div class="card m-2 col-lg-5 col-11">
+                        <div class="card-body">
+                            <span class="timeline-icon">
+                            <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
+                            </span>
+                            <h5 class="fw-bold">Excel to MySQL: Analytic Techniques for Business Specialization</h5>
+                            <p class="text-muted mb-2 fw-bold">December 2020</p>
+                            <p class="text-muted">
+                                Data Visualization and Communication with Tableau<br>
+                                CS1.1: Mastering Data Analysis in Excel<br>
+                                CS1.2: Increasing Real Estate Management Profits: Harnessing Data Analytics<br>
+                                CS1.3: Business Metrics for Data-Driven Companies<br>
+                                CS1.4: Managing Big Data with MySQL<br>
+                                by <em>Duke University in partnership with Coursera MOOCs.</em>
+                            </p>
+                        </div>
+                  </div>
+
+                  <div class="card m-2 col-lg-5 col-11">
+                    <div class="card-body">
+                        <span class="timeline-icon">
+                            <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
+                        </span>
+                        <h5 class="fw-bold">Mathematics for Machine Learning Specialization</h5>
+                        <p class="text-muted mb-2 fw-bold">December 2020</p>
+                        <p class="text-muted">
+                            CS1.1: Mathematics for Machine Learning: Linear Algebra<br>
+                            CS1.2: Mathematics for Machine Learning: Multivariate Calculus<br>
+                            CS1.3: Mathematics for Machine Learning: PCA<br>
+                            by <em>Imperial College London in partnership with Coursera MOOCs.</em>
+                        </p>
+                    </div>
+                  </div>
+
+                  <div class="card m-2 col-lg-5 col-11">
+                        <div class="card-body">
+                            <span class="timeline-icon">
+                            <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
+                            </span>
+                            <h5 class="fw-bold">Applied Data Science with Python Specialization</h5>
+                            <p class="text-muted mb-2 fw-bold">January 2021</p>
+                            <p class="text-muted">
+                            CS1.1: Applied Plotting, Charting & Data Representation in Python<br>
+                            CS1.2: Introduction to Data Science in Python<br>
+                            CS1.3: Applied Machine Learning in Python<br>
+                            CS1.4: Applied Text Mining in Python<br>
+                            CS1.5: Applied Social Network Analysis in Python<br>
+                            by <em>University of Michigan in partnership with Coursera MOOCs.</em>
+                            </p>
+                        </div>
+                  </div>
+
+
+                  <div class="card m-2 col-lg-5 col-11">
+                        <div class="card-body">
+                            <span class="timeline-icon">
+                            <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
+                            </span>
+                            <h5 class="fw-bold">Deep Learning</h5>
+                            <p class="text-muted mb-2 fw-bold">January 2021</p>
+                            <p class="text-muted">
+                            CS1.1: Convolutional Neural Networks<br>
+                            CS1.2: Sequence Models<br>
+                            CS1.3: Neural Networks and Deep Learning<br>
+                            CS1.4: Structuring Machine Learning Projects<br>
+                            CS1.5: Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization<br>
+                            by <em>DeepLearning.AI in partnership with Coursera MOOCs.</em>
+                            </p>
+                        </div>
+                  </div>
+
+                  <div class="card m-2 col-lg-5 col-11">
+                        <div class="card-body">
+                            <span class="timeline-icon">
+                            <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
+                            </span>
+                            <h5 class="fw-bold">Web Development</h5>
+                            <p class="text-muted mb-2 fw-bold">April 2021</p>
+                            <p class="text-muted">
+                            CS2.1: Introduction to web development with HTML5, CSS3, Javascript<br>
+                            CS2.2: Advanced web development<br>
+                            by <em>Mathesis MOOCs, developed in Crete University Press of the Foundation for Research and Technology - Hellas.</em>
+                            </p>
+                        </div>
+                  </div>
+
+                  <div class="card m-2 col-lg-5 col-11">
+                    <div class="card-body">
+                        <span class="timeline-icon">
+                        <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
+                        </span>
+                        <h5 class="fw-bold">Azure AI Fundamentals</h5>
+                        <p class="text-muted mb-2 fw-bold">May 2022</p>
+                        <p class="text-muted">
+                        Microsoft Certified: Azure AI Fundamentals<br>
+                        by <em>Microsoft</em>
+                        </p>
+                    </div>
+              </div>
+              
+            
+            
+          </div>
+        </section>
+        <!--Skills section-->
+    </div>
+{% endblock content %}

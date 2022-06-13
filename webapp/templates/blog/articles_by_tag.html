@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Articles by Category
+{% endblock title %}
+
+{% block jumbotron %}
+<div id="intro"
+class="text-center bg-image shadow-3-strong"
+style="background-image: url('/static/images/by_tag_jumbotron.jpg');">
+<div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+            <h1 class="mb-3 h2">Articles about <em>{{ main_tag.name }}</em></h1>
+            <p class="mb-3">{{ main_tag.description }}</p>
+        </div>
+    </div>
+</div>
+{% endblock jumbotron %}
+
+{% block content %}
+<main class="my-5">
+    <div class="container">
+        <!--Grid row-->
+        <div class="row">
+          <!--Grid column-->
+          <div class="col-md-9 mb-4">
+            <!--Section: Content-->
+            <section>
+              {% if articles %}
+                  {% for article in articles.items %}
+                      <!-- Post -->
+                      <div class="row">
+                          <div class="col-md-4 mb-4">
+                              <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
+                              <img src="{{ url_for('static', filename='images/article_images/' + article.article_image) }}" class="img-fluid" />
+                              <a href="{{ url_for('full_article', article_id=article.id) }}">
+                                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                              </a>
+                              </div>
+                          </div>
+  
+                          <div class="col-md-8 mb-4">
+                              <h5>{{ article.article_title }}</h5>
+                              <p>
+                                  {{ article.article_description }}
+                              </p>
+  
+                              <a href="{{ url_for('full_article', article_id=article.id) }}" type="button" class="btn btn-primary">Read</a>
+                          </div>
+                      </div>
+                  {% endfor %}
+              {% endif %}
+              
+            </section>
+            <!--Section: Content-->
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-md-3 mb-4">
+            <!--Section: Sidebar-->
+            <section class="sticky-top" style="top: 80px;">
+              <!--Section: Other Categories-->
+              <section class="text-center border-bottom pb-4 mb-4">
+                <h5>Other Categories</h5>
+                <div class="list-group list-group-light {% if tags|length > 10 %} list-group-small {% endif %}">
+                    {% for tag in tags %}
+                        {% if tag.id == main_tag.id %}
+                            <a
+                            href=""
+                            class="list-group-item list-group-item-action px-3 border-0 ripple active disabled"
+                            aria-current="true"
+                            >{{ tag.name }}</a>
+                        {% else %}
+                            <a
+                            href="{{ url_for('articles_by_tag', tag_id=tag.id) }}"
+                            class="list-group-item list-group-item-action px-3 border-0 ripple"
+                            aria-current="true"
+                            >{{ tag.name }}</a>
+                        {% endif %}
+                    
+                    {% endfor %}
+                  </div>
+              </section>
+              <!--Section: Ad-->
+            </section>
+            <!--Section: Sidebar-->
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+  
+        <!-- Pagination -->
+        <nav class="my-4" aria-label="...">
+          <ul class="pagination pagination-circle justify-content-center">
+            
+              <li class="page-item {% if not articles.has_prev %} disabled {% endif %}">
+                <a class="page-link" href="">Previous</a>
+              </li>
+            
+            {% for page_number in articles.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+              {% if page_number %}
+                {% if articles.page == page_number %}
+                <li class="page-item active" aria-current="page">
+                  <a class="page-link" href="">{{ page_number }}<span class="visually-hidden">(current)</span></a>
+                </li>
+                {% else %}
+                  <li class="page-item"><a class="page-link" href="">{{ page_number }}</a></li>
+                {% endif %}
+              {% else %}
+                  <span>...</span>
+              {% endif %}
+            {% endfor %}
+
+              <li class="page-item {% if not articles.has_next %} disabled {% endif %}">
+                <a class="page-link" href="">Next</a>
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+</main>
+{% endblock content %}

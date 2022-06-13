@@ -1,0 +1,25 @@
+/* Default height for small devices */
+#intro {
+    height: 400px;
+    margin-top: 58px;
+  }
+
+  /* Height for devices larger than 992px */
+  @media (min-width: 992px) {
+    #intro {
+      height: 300px;
+      margin-top: 58px;
+    }
+  }
+
+#my-photo {
+    height: 150px;
+    border: 5px solid #fff;
+    border-radius: 5px;
+}
+
+#intro-contact {
+  background-image: url(/static/images/contact_jumbotron.jpg);
+  height: 85vh;
+}
+
