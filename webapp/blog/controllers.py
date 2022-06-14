@@ -42,7 +42,7 @@ def articles_by_tag(tag_id):
     return render_template("articles_by_tag.html", articles=articles, main_tag=tag, tags=tags, page=page)
 
 
-@blog_blueprint.route("/blog/full_article/<int:article_id>", methods=["GET", "POST"])
+@blog_blueprint.route("/full_article/<int:article_id>", methods=["GET", "POST"])
 def full_article(article_id):
     article = Article.query.get_or_404(article_id)
 

@@ -5,7 +5,7 @@ from flask_mail import Mail
 
 
 db = SQLAlchemy()
-#migrate = Migrate()
+migrate = Migrate()
 #mail = Mail()
 
 def create_app(object_name):
@@ -13,7 +13,7 @@ def create_app(object_name):
     app = Flask(__name__)
     app.config.from_object(object_name)
     db.init_app(app)
-    #migrate.init_app(app, db)
+    migrate.init_app(app, db)
     #mail.init_app(app)
 
     from .main import create_module as main_create_module

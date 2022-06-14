@@ -112,7 +112,7 @@
                     <div class="col-10">
                       <p class="mb-2"><strong>{{ comment.author }}</strong></p>
                       <p>
-                        {{ comment.text | safe }}
+                        {{ comment.text }}
                       </p>
                     </div>
                   </div>
@@ -215,9 +215,9 @@
                     <a class="nav-link" href="#content">Content</a>
                     {% if project.sections %}
                     <ul class="nav flex-column ps-3">
-                      {% for section in project.sections %}
+                      {% for id, section in project.sections.items() %}
                         <li class="nav-item">
-                          <a class="nav-link" href="#{{ section.section }}">{{ section.title }}</a>
+                          <a class="nav-link" href="#{{ id }}">{{ section }}</a>
                         </li>
                       {% endfor %}
                     </ul>
