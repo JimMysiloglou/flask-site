@@ -1,3 +1,4 @@
+from flask import request
 from .. import db
 from datetime import datetime
 import hashlib
@@ -52,13 +53,20 @@ class Comment(db.Model):
     article_id = db.Column(db.Integer, db.ForeignKey('article.id'))
     project_id = db.Column(db.Integer, db.ForeignKey('project.id'))
 
+    def __init__(self, **kwargs):
+        super(Comment, self).__init__(**kwargs)
+        if self.email is not None and self.avatar_hash is None:
+            self.avatar_hash = self.gravatar_hash()
+
     def gravatar_hash(self):
-        self.avatar_hash = hashlib.md5(self.email.lower().encode('utf-8')).hexdigest()
-        return self.avatar_hash
+        return hashlib.md5(self.email.lower().encode('utf-8')).hexdigest()
 
     def gravatar(self, size=100, default='identicon', rating='g'):
-        url = 'https://secure.gravatar.com/avatar'
-        hash = self.avatar_hash or self.gravatar_hash
+        if request.is_secure:
+            url = 'https://secure.gravatar.com/avatar'
+        else:
+            url = 'http://secure.gravatar.com/avatar'
+        hash = self.avatar_hash or self.gravatar_hash()
         return '{url}/{hash}?s={size}&d={default}&r={rating}'.format(
             url=url, hash=hash, size=size, default=default, rating=rating)
 

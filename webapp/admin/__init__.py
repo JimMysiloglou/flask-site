@@ -1,6 +1,6 @@
 from flask_admin import Admin
 from .. import db
-from .controllers import CustomModelView, MyAdminIndexView, UserAdminView, ArticleAdminView, ProjectAdminView
+from .controllers import CustomModelView, MyAdminIndexView, ArticleAdminView, ProjectAdminView, CustomFileAdmin
 from webapp.blog.models import Article, Comment, Tag
 from webapp.auth.models import User
 from webapp.portfolio.models import Project
@@ -14,8 +14,9 @@ def create_module(app, **kwargs):
 
     ckeditor.init_app(app)
     
-    admin.add_view(UserAdminView(User, db.session))
+    admin.add_view(CustomModelView(User, db.session))
     admin.add_view(ArticleAdminView(Article, db.session))
     admin.add_view(ProjectAdminView(Project, db.session))
     admin.add_view(CustomModelView(Tag, db.session))
     admin.add_view(CustomModelView(Comment, db.session))
+    admin.add_view(CustomFileAdmin(app.static_folder, '/static/', name='Static Files'))

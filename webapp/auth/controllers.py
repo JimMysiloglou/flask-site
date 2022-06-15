@@ -9,9 +9,9 @@ auth_blueprint = Blueprint(
 )
 
 # CKEditor image uploading
-@auth_blueprint.route('/files/<filename>')
+@auth_blueprint.route('/other_images/<filename>')
 def uploaded_files(filename):
-    path = os.path.join('../static/images', 'other_images')
+    path = 'static/images/other_images'
     return send_from_directory(path, filename)
 
 @auth_blueprint.route('/upload', methods=['POST'])
@@ -22,7 +22,6 @@ def upload():
     if extension not in ['.jpg', '.gif', '.png', '.jpeg']:
         return upload_fail(message='Image only!')
     f.filename = random_filename + extension
-    f.save(os.path.join('../static/images', 'other_images', f.filename))
-    print(f.filename)
-    url = url_for('uploaded_files', filename=f.filename)
+    f.save(os.path.join('webapp/static/images', 'other_images', f.filename))
+    url = url_for('auth.uploaded_files', filename=f.filename)
     return upload_success(url, filename=f.filename)
