@@ -18,6 +18,7 @@ class Article(db.Model):
     article_description = db.Column(db.String(200), nullable=False)
     article_body = db.Column(db.Text(), nullable=False)
     article_image = db.Column(db.String(30), default='default_article_image.jpg')
+    article_section_ids = db.Column(db.String(60))
     article_sections = db.Column(db.String(300))
     github_link = db.Column(db.String(60))
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
@@ -26,9 +27,18 @@ class Article(db.Model):
                 backref=db.backref('articles', lazy='dynamic'))
     comments = db.relationship('Comment', backref='article', lazy=True)
 
+    def __init__(self, **kwargs):
+        super(Article, self).__init__(**kwargs)
+        if self.article_section_ids is None:
+            self.article_section_ids = self.section_scraping()
+
+    def section_scraping(self):
+        return '|'.join(re.findall(PATTERN, self.article_body))
+
     @property
     def sections(self):
-        return dict(zip(re.findall(PATTERN, self.article_body), self.article_sections.split('|')))
+        ids = self.article_section_ids or self.section_scraping()
+        return dict(zip(ids.split('|'), self.article_sections.split('|')))
 
     def __repr__(self):
         return f"{self.date_created}: {self.article_title}"
