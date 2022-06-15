@@ -65,7 +65,7 @@ style="background-image: url('/static/images/portfolio_jumbotron.jpg');">
                 <div class="row">
                     {% if row[0] != '&nbsp;' %}
                         <div class="col-lg-4 col-md-12 mb-4">
-                        <div class="card">
+                        <div class="card h-100">
                             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                             <img src="{{ url_for('static', filename='images/project_images/'+row[0].project_image) }}" class="img-fluid" />
                             <a href="{{ url_for('portfolio.full_project', project_id=row[0].id) }}">
@@ -85,7 +85,7 @@ style="background-image: url('/static/images/portfolio_jumbotron.jpg');">
                     
                     {% if row[1] != '&nbsp;' %}
                         <div class="col-lg-4 col-md-12 mb-4">
-                            <div class="card">
+                            <div class="card h-100">
                                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                 <img src="{{ url_for('static', filename='images/project_images/'+row[1].project_image) }}" class="img-fluid" />
                                 <a href="{{ url_for('portfolio.full_project', project_id=row[1].id) }}">
@@ -105,7 +105,7 @@ style="background-image: url('/static/images/portfolio_jumbotron.jpg');">
 
                     {% if row[2] != '&nbsp;' %}
                     <div class="col-lg-4 col-md-12 mb-4">
-                        <div class="card">
+                        <div class="card h-100">
                             <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                             <img src="{{ url_for('static', filename='images/project_images/'+row[0].project_image) }}" class="img-fluid" />
                             <a href="{{ url_for('portfolio.full_project', project_id=row[0].id) }}">

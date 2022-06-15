@@ -13,19 +13,18 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
     <div class="text-white">
           <h1 class="mb-3 h2">My Blog Articles</h1>
           <p class="mb-3">Here you can read my posts ordered by date or choose by a certain topic below</p>
-          <div class="dropdown">
+          <div class="dropdown dropend">
             <a
               class="btn btn-outline-light dropdown-toggle"
-              href="#"
-              role="button"
-              id="dropdownMenuLink"
+              type="button"
+              id="dropdownMenuButton"
               data-mdb-toggle="dropdown"
               aria-expanded="false"
             >
               Topics
             </a>
           
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="height: 298px; overflow-y:scroll">
               {% if tags %}
                   {% for tag in tags %}
                   <li><a class="dropdown-item" href="{{ url_for('blog.articles_by_tag', tag_id=tag.id) }}">{{ tag.name }}</a></li>
@@ -95,7 +94,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
                       <div class="row d-flex justify-content-center">
                               {% if row[0] != '&nbsp;' %}
                               <div class="col-lg-4 col-md-12 mb-4">
-                                  <div class="card">
+                                  <div class="card h-100">
                                   <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                       <img src="{{ url_for('static', filename='images/article_images/'+row[0].article_image) }}" class="img-fluid" />
                                       <a href="{{ url_for('blog.full_article', article_id=row[0].id) }}">
@@ -127,7 +126,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
     
                               {% if row[1] != '&nbsp;' %}
                               <div class="col-lg-4 col-md-6 mb-4">
-                                  <div class="card">
+                                  <div class="card h-100">
                                   <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                       <img src="{{ url_for('static', filename='images/article_images/'+row[1].article_image) }}" class="img-fluid" />
                                       <a href="{{ url_for('blog.full_article', article_id=row[1].id) }}">
@@ -159,7 +158,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
     
                               {% if row[2] != '&nbsp;' %}
                               <div class="col-lg-4 col-md-6 mb-4">
-                                  <div class="card">
+                                  <div class="card h-100">
                                   <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                       <img src="{{ url_for('static', filename='images/article_images/'+row[2].article_image) }}" class="img-fluid" />
                                       <a href="{{ url_for('blog.full_article', article_id=row[2].id) }}">

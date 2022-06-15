@@ -5,13 +5,19 @@
 
     <div>
         {% if current_user.is_authenticated %}
-        <h1>Flask-Admin example</h1>
-        <p class="lead">
-            Authentication
-        </p>
-        <p>
-            This example shows how you can use Flask-Login for authentication. It is only intended as a basic demonstration.
-        </p>
+        <h1>{{ current_user.name }}</h1>
+        <h3>
+            Articles: {{ articles | length }}
+        </h3>
+        <h3>
+            Tags: {{ tags | length }}
+        </h3>
+        <h3>
+            Projects: {{ projects | length }}
+        </h3>
+        <h3>
+            Comments: {{ comments | length }}
+        </h3>
         {% else %}
         <form method="POST" action="">
             {{ form.hidden_tag() if form.hidden_tag }}
