@@ -1,5 +1,7 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, redirect, render_template, flash, url_for
 from webapp.blog.models import Article
+from webapp.main.forms import ContactForm
+from .models import Message, db
 
 main_blueprint = Blueprint(
     'main',
@@ -20,16 +22,36 @@ def inject_searchform():
     return dict(form=form)
 
 
-@main_blueprint.route("/search", methods=["POST"])
+@main_blueprint.route("/search/", methods=["POST"])
 def search():
     form = SearchForm()
-
-    page = request.args.get("page", 1, type=int)
 
     if form.validate_on_submit():
         searched_string = form.searched.data
 
         articles = Article.query.filter(Article.article_body.contains(searched_string))
-        articles = articles.order_by(Article.date_created).paginate(per_page=4, page=page)
+        articles = articles.order_by(Article.date_created)
 
-        return render_template("search.html", form=form, articles=articles, searched=searched_string, page=page)
+        return render_template("search.html", articles=articles, searched=searched_string)
+
+    
+
+
+@main_blueprint.route("/contact/", methods=["GET", "POST"])
+def contact():
+    form = ContactForm()
+
+    if form.validate_on_submit():
+        name = form.name.data
+        email = form.email.data
+        message = form.message.data
+
+        message = Message(name=name, email=email, message=message)
+
+        db.session.add(message)
+        db.session.commit()
+
+        flash("Your message has submitted succesfully", "success")
+        return redirect(url_for("main.contact"))
+
+    return render_template("contact.html", form=form)

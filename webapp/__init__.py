@@ -1,13 +1,12 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from flask_mail import Mail
 from flask_assets import Environment, Bundle
 
 
 db = SQLAlchemy()
 migrate = Migrate()
-#mail = Mail()
+
 
 assets_env = Environment()
 
@@ -31,7 +30,6 @@ def create_app(object_name):
     app.config.from_object(object_name)
     db.init_app(app)
     migrate.init_app(app, db)
-    #mail.init_app(app)
     assets_env.init_app(app)
 
     assets_env.register("main_js", main_js)

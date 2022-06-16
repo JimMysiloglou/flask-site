@@ -1,3 +1,4 @@
+from email import message
 from .forms import LoginForm, CKTextAreaField
 from flask_admin.contrib.sqla import ModelView
 from flask_admin import expose, AdminIndexView
@@ -10,6 +11,7 @@ from flask_admin.form import SecureForm, ImageUploadField
 from flask_admin.contrib.fileadmin import FileAdmin
 from webapp.blog.models import Article, Comment, Tag
 from webapp.portfolio.models import Project
+from webapp.main.models import Message
 
 
 # Create customized model view class
@@ -28,7 +30,8 @@ class MyAdminIndexView(AdminIndexView):
         projects = Project.query.all()
         tags = Tag.query.all()
         comments = Comment.query.all()
-        return self.render('admin/index.html', articles=articles, projects=projects, comments=comments, tags=tags)
+        messages = Message.query.all()
+        return self.render('admin/index.html', articles=articles, projects=projects, comments=comments, tags=tags, messages=messages)
 
     @expose('/login/', methods=['GET', 'POST'])
     def login_view(self):

@@ -11,29 +11,30 @@
           <div class="container">
             <div class="row justify-content-center">
               <div class="col-xl-5 col-md-8">
-                <form class="bg-white  rounded-5 shadow-5-strong p-5">
+                <form method="POST" class="bg-white  rounded-5 shadow-5-strong p-5">
+                  
+                  {{ form.hidden_tag() }}
+                  
                   <!-- Name input -->
                     <div class="form-outline mb-4">
-                        <input type="text" id="form4Example1" class="form-control" />
-                        <label class="form-label" for="form4Example1">Name</label>
+                      {{ form.name(class="form-control") }}
+                      {{ form.name.label(class="form-label") }}
                     </div>
 
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="email" id="form4Example2" class="form-control" />
-                        <label class="form-label" for="form4Example2">Email address</label>
+                        {{ form.email(class="form-control") }}
+                        {{ form.email.label(class="form-label") }}
                     </div>
 
                     <!-- Message input -->
                     <div class="form-outline mb-4">
-                        <textarea class="form-control" id="form4Example3" rows="4"></textarea>
-                        <label class="form-label" for="form4Example3">Message</label>
+                        {{ form.message(class="form-control") }}
+                        {{ form.message.label(class="form-label") }}
                     </div>
 
-                    
-
                     <!-- Submit button -->
-                    <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
+                    {{ form.submit(class="btn btn-primary btn-block") }}
                 </form>
               </div>
             </div>

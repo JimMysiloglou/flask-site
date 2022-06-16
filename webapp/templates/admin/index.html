@@ -18,6 +18,9 @@
         <h3>
             Comments: {{ comments | length }}
         </h3>
+        <h3>
+            Messages: {{ messages | length }}
+        </h3>
         {% else %}
         <form method="POST" action="">
             {{ form.hidden_tag() if form.hidden_tag }}

@@ -11,29 +11,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
   <div class="d-flex justify-content-center align-items-center h-100">
     <div class="text-white">
-          <h1 class="mb-3 h2">My Blog Articles</h1>
-          <p class="mb-3">Here you can read my posts ordered by date or choose by a certain topic below</p>
-          <div class="dropdown">
-            <a
-              class="btn btn-outline-light dropdown-toggle"
-              href="#"
-              role="button"
-              id="dropdownMenuLink"
-              data-mdb-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Topics
-            </a>
-          
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              {% if tags %}
-                  {% for tag in tags %}
-                  <li><a class="dropdown-item" href="{{ url_for('blog.articles_by_tag', tag_id=tag.id) }}">{{ tag.name }}</a></li>
-                  {% endfor %}
-              {% else %}
-              {% endif %}
-            </ul>
-          </div>
+          <h1 class="mb-3 h2">Articles about <em>{{ searched }}</em></h1>
         </div>
       </div>
     </div>
@@ -50,7 +28,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
             <!--Section: Content-->
             <section>
               {% if articles %}
-                  {% for article in articles.items %}
+                  {% for article in articles %}
                       <!-- Post -->
                       <div class="row">
                           <div class="col-md-4 mb-4">
@@ -91,34 +69,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
         </div>
         <!--Grid row-->
   
-        <!-- Pagination -->
-        <nav class="my-4" aria-label="...">
-          <ul class="pagination pagination-circle justify-content-center">
-            {% if page > 1 %}
-              <li class="page-item">
-                <a class="page-link" href="">Previous</a>
-              </li>
-            {% endif %}
-            {% for page_number in articles.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
-              {% if page_number %}
-                {% if articles.page == page_number %}
-                <li class="page-item active" aria-current="page">
-                  <a class="page-link" href="">{{ page_number }}<span class="visually-hidden">(current)</span></a>
-                </li>
-                {% else %}
-                  <li class="page-item"><a class="page-link" href="">{{ page_number }}</a></li>
-                {% endif %}
-              {% else %}
-                  <span>...</span>
-              {% endif %}
-            {% endfor %}
-            {% if page < articles.pages %}
-              <li class="page-item">
-                <a class="page-link" href="">Next</a>
-              </li>
-            {% endif %}
-          </ul>
-        </nav>
+        
       </div>
 </main>
 {% endblock content %}
