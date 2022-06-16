@@ -20,10 +20,9 @@
     />
 
     <!-- Material Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mdb.min.css') }}">
-
-    <!-- My stylesheet -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    {% assets "main_css" %}
+    <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
+    {% endassets %}
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
@@ -63,9 +62,9 @@
     {% include "footer.html" %}
 
     <!-- MDB -->
-    <script type="text/javascript" src="{{ url_for('static', filename='js/mdb.min.js') }}"></script>
-    <!-- Custom scripts -->
-    <script type="text/javascript" src="{{ url_for('static', filename='js/my_script.js') }}"></script>
+    {% assets "main_js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
 </body>
 
 </html>
