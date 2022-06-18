@@ -2,6 +2,7 @@ from flask import Blueprint, redirect, render_template, flash, url_for
 from webapp.blog.models import Article
 from webapp.main.forms import ContactForm
 from .models import Message, db
+from flask_babel import _
 
 main_blueprint = Blueprint(
     'main',
@@ -51,7 +52,7 @@ def contact():
         db.session.add(message)
         db.session.commit()
 
-        flash("Your message has submitted succesfully", "success")
+        flash(_("Your message has submitted succesfully"), "success")
         return redirect(url_for("main.contact"))
 
     return render_template("contact.html", form=form)

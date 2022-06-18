@@ -11,8 +11,8 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
   <div class="d-flex justify-content-center align-items-center h-100">
     <div class="text-white">
-          <h1 class="mb-3 h2">My Blog Articles</h1>
-          <p class="mb-3">Here you can read my posts ordered by date or choose by a certain topic below</p>
+          <h1 class="mb-3 h2">{{ _('My Blog Articles') }}</h1>
+          <p class="mb-3">{{ _('Here you can read my posts ordered by date or choose by a certain topic below') }}</p>
           <div class="dropdown dropend">
             <a
               class="btn btn-outline-light dropdown-toggle"
@@ -21,7 +21,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
               data-mdb-toggle="dropdown"
               aria-expanded="false"
             >
-              Topics
+              {{ _('Topics') }}
             </a>
           
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="height: 298px; overflow-y:scroll">
@@ -57,7 +57,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
             </div>
     
             <div class="col-md-6 mb-4">
-              <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">Most Recent Post</span>
+              <span class="badge bg-danger px-2 py-1 shadow-1-strong mb-3">{{ _('Most Recent Post') }}</span>
               <h4><strong>{{ first_article.article_title | safe }}</strong></h4>
               <p class="text-muted">
                 {{ first_article.article_description | safe }}
@@ -75,7 +75,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
                 </div>
               </div>
               <a href="{{ url_for('blog.full_article', article_id=first_article.id) }}">
-                <button type="button" class="btn btn-primary">Read more</button>
+                <button type="button" class="btn btn-primary">{{ _('Read more') }}</button>
               </a>
             </div>
           </div>
@@ -88,7 +88,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
         {% if articles %}
             <!--Section: Content-->
             <section class="text-center">
-                <h4 class="mb-5"><strong>Latest posts</strong></h4>
+                <h4 class="mb-5"><strong>{{ _('Latest posts') }}</strong></h4>
                   {% for row in articles.items | batch(3, '&nbsp;') %}
                       
                       <div class="row d-flex justify-content-center">
@@ -198,7 +198,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
             <ul class="pagination pagination-circle justify-content-center">
               
                 <li class="page-item {% if not articles.has_prev %} disabled {% endif %}">
-                  <a class="page-link" href="{{ url_for('.blog', page=articles.prev_num) }}">Previous</a>
+                  <a class="page-link" href="{{ url_for('.blog', page=articles.prev_num) }}">{{ _('Previous') }}</a>
                 </li>
               
               {% for page_number in articles.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
@@ -216,7 +216,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
               {% endfor %}
               
                 <li class="page-item {% if not articles.has_next %} disabled {% endif %}">
-                  <a class="page-link" href="{{ url_for('.blog', page=articles.next_num) }}">Next</a>
+                  <a class="page-link" href="{{ url_for('.blog', page=articles.next_num) }}">{{ _('Next') }}</a>
                 </li>
               
             </ul>

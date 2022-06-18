@@ -40,11 +40,13 @@ def create_app(object_name):
     from .auth import create_module as auth_create_module
     from .portfolio import create_module as portfolio_create_module
     from .admin import create_module as admin_create_module
+    from .babel import create_module as babel_create_module
     
     main_create_module(app)
     blog_create_module(app)
     auth_create_module(app)
     portfolio_create_module(app)
     admin_create_module(app)
+    babel_create_module(app)
 
     return app

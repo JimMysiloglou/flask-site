@@ -11,16 +11,16 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
 <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
   <div class="d-flex justify-content-center align-items-center h-100">
       <div class="text-white">
-          <h1 class="mb-3">Mysiloglou Dimitrios</h1>
-              <h5 class="mb-4">Aspirant Data Scientist</h5>
+          <h1 class="mb-3">{{ _('Mysiloglou Dimitrios') }}</h1>
+              <h5 class="mb-4">{{ _('Aspirant Data Scientist') }}</h5>
           <a class="btn btn-outline-light btn-lg m-2"
           href="#"
           role="button"
-          >Download CV</a>
+          >{{ _('Download CV') }}</a>
           <a class="btn btn-outline-light btn-lg m-2"
           href=""
           role="button"
-          >Contact Me</a>
+          >{{ _('Contact Me') }}</a>
       </div>
   </div>
 </div>
@@ -33,18 +33,17 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
     <div class="container">
         <!--About section-->
         <section class="text-center" id="about-sector">
-          <h3 class="mt-5"><strong>About me</strong></h3>
+          <h3 class="mt-5"><strong>{{ _('About me') }}</strong></h3>
           <div class="row">
             <div class="col-md-6 mb-4 px-4">
               <img src="{{ url_for('static', filename='images/photo.jpg') }}"
               class="rounded-circle shadow-1-strong mb-4" id="my-photo" alt="Avatar">
               <p>
-                Welcome to my blog!<br>
-                My studies are in economics and in this blog, I will mainly document 
-                my learning journey into data analysis through python 
-                and other BI tools.
-                My other interests are in web development and Raspberry Pi projects.<br>
-                Thank you for visiting!
+                {{ _('Welcome to my blog!') }}<br>
+                {{ _('My studies are in economics and in this blog, I will mainly document') }}<br>
+                {{ _('my learning journey into data analysis through python and other BI tools.') }}<br>
+                {{ _('My other interests are in web development and Raspberry Pi projects.') }}<br>
+                {{ _('Thank you for visiting!') }}
               </p>
               <a class="btn btn-primary btn-floating m-1" style="background-color: #0376a8;" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
               <a class="btn btn-primary btn-floating m-1" style="background-color: #171515;" href="#!" role="button"><i class="fab fa-github"></i></a>
@@ -53,20 +52,20 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
               <table class="table">
                 <tbody>
                   <tr>
-                    <th scope="row"><i class="far fa-calendar pe-2 text-muted"></i> Age</th>
+                    <th scope="row"><i class="far fa-calendar pe-2 text-muted"></i> {{ _('Age') }}</th>
                     <td>34</td>
                   </tr>
                   <tr>
-                    <th scope="row"><i class="far fa-envelope pe-2 text-muted"></i> Email</th>
+                    <th scope="row"><i class="far fa-envelope pe-2 text-muted"></i> {{ _('Email') }}</th>
                     <td>mysiloglou@gmail.com</td>
                   </tr>
                   <tr>
-                    <th scope="row"><i class="fas fa-phone pe-2 text-muted"></i> Cellphone</th>
+                    <th scope="row"><i class="fas fa-phone pe-2 text-muted"></i> {{ _('Cellphone') }}</th>
                     <td>6909243815</td>
                   </tr>
                   <tr>
-                    <th scope="row"><i class="fas fa-map-marker-alt pe-2 text-muted"></i> Address</th>
-                    <td>Piraues - Greece</td>
+                    <th scope="row"><i class="fas fa-map-marker-alt pe-2 text-muted"></i> {{ _('Address') }}</th>
+                    <td>{{ _('Piraues - Greece') }}</td>
                   </tr>
                 </tbody>
               </table>
@@ -74,7 +73,7 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
             </div>
             <div class="col-md-6 mb-4 align-self-center">
               <!-- First row -->
-              <p><strong>Proficient (4+ years):</strong></p>
+              <p><strong>{{ _('Proficient (4+ years)') }}:</strong></p>
               <div class="row justify-content-center">
                 <div class="col-md-4 mb-4">
                   <i class="fab fa-python fa-3x m-2"></i>
@@ -87,7 +86,7 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
               </div>
               <!-- First row -->
               <!-- Second row -->
-              <p><strong>Advanced (3 years):</strong></p>
+              <p><strong>{{ _('Advanced (3 years)') }}:</strong></p>
               <div class="row justify-content-center">
                 <div class="col-md-4 mb-4">
                   <i class="fa-solid fa-database fa-3x m-2"></i>
@@ -106,7 +105,7 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
               </div>
               <!-- Second row -->
               <!-- Third row -->
-              <p><strong>Good (2+ years):</strong></p>
+              <p><strong>{{ _('Good (2+ years)') }}:</strong></p>
               <div class="row justify-content-center">
             
                 <div class="col-md-4 mb-4">
@@ -137,7 +136,7 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
               <!-- Third row -->
     
               <!-- Fourth row -->
-              <p><strong>Learning (1+ year):</strong></p>
+              <p><strong>{{ _('Learning (1+ year)') }}:</strong></p>
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <i class="fa-solid fa-chart-column fa-3x m-2"></i>
@@ -159,7 +158,7 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
         <hr class="my-5" />
         <!--Skills section-->
         <section id="skills-sector">
-          <h3 class="my-4 text-center"><strong>Education and Work Experience</strong></h3>
+          <h3 class="my-4 text-center"><strong>{{ _('Education and Work Experience') }}</strong></h3>
           <div class="row py-5">
             <div class="main-timeline-2">
               <div class="timeline-2 left-2">
@@ -168,11 +167,11 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
                       <span class="timeline-icon">
                           <i class="fas fa-graduation-cap text-primary fa-sm fa-fw"></i>
                       </span>
-                      <h4 class="fw-bold">Business Economics and Finance</h4>
-                      <p class="text-muted mb-2 fw-bold">April 2014</p>
+                      <h4 class="fw-bold">{{ _('Business Economics and Finance') }}</h4>
+                      <p class="text-muted mb-2 fw-bold">{{ _('April') }} 2014</p>
                       <p class="text-muted">
-                          Bachelor degree in the department of economics science<br>
-                          by Athens University of Economics and Business.
+                          {{ _('Bachelor degree in the department of economics science') }}<br>
+                          {{ _('by Athens University of Economics and Business.') }}
                       </p>
                   </div>
                 </div>
@@ -183,11 +182,11 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
                       <span class="timeline-icon">
                           <i class="fas fa-briefcase text-primary fa-sm fa-fw"></i>
                       </span>
-                      <h4 class="fw-bold">Full time agent (banking sector)</h4>
-                      <p class="text-muted mb-2 fw-bold">April 2016</p>
+                      <h4 class="fw-bold">{{ _('Full time agent (banking sector)') }}</h4>
+                      <p class="text-muted mb-2 fw-bold">{{ _('April') }} 2016</p>
                       <p class="text-muted">
                           Mellon Contact Services.<br>
-                          Contacting customers over overdue payments and advise them on alternative payment plans. 
+                          {{ _('Contacting customers over overdue payments and advise them on alternative payment plans.') }}
                       </p>
                   </div>
                 </div>
@@ -199,7 +198,7 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
                           <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
                       </span>
                       <h4 class="fw-bold">ECDL Profile Certificate</h4>
-                      <p class="text-muted mb-2 fw-bold">June 2017</p>
+                      <p class="text-muted mb-2 fw-bold">{{ _('June') }} 2017</p>
                       <p class="text-muted">
                           <strong>Modules:</strong>
                           <ul style="list-style-type:circle">
@@ -219,8 +218,8 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
                       <span class="timeline-icon">
                           <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
                       </span>
-                      <h4 class="fw-bold">Python Programming</h4>
-                      <p class="text-muted mb-2 fw-bold">June 2019</p>
+                      <h4 class="fw-bold">{{ _('Python Programming') }}</h4>
+                      <p class="text-muted mb-2 fw-bold">{{ _('June') }} 2019</p>
                       <p class="text-muted">
                           CS1.1: Introduction to Python<br>
                           CS1.2: Advanced programming in Python<br>
@@ -236,7 +235,7 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
                           <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
                       </span>
                       <h4 class="fw-bold">Applied Data Science Module</h4>
-                      <p class="text-muted mb-2 fw-bold">March 2020</p>
+                      <p class="text-muted mb-2 fw-bold">{{ _('March') }} 2020</p>
                       <p class="text-muted">
                           CS1.1: Scientific Computing and Python for Data Science<br>
                           CS1.2: Machine Learning and Statistical Analysis<br>
@@ -252,7 +251,7 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
                       <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
                       </span>
                       <h4 class="fw-bold">Statistics with Python Specialization</h4>
-                      <p class="text-muted mb-2 fw-bold">December 2020</p>
+                      <p class="text-muted mb-2 fw-bold">{{ _('December') }} 2020</p>
                       <p class="text-muted">
                       CS1.1: Understanding and Visualizing Data with Python<br>
                       CS1.2: Inferential Statistical Analysis with Python<br>
@@ -269,7 +268,7 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
                       <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
                       </span>
                       <h4 class="fw-bold">Excel to MySQL: Analytic Techniques for Business Specialization</h4>
-                      <p class="text-muted mb-2 fw-bold">December 2020</p>
+                      <p class="text-muted mb-2 fw-bold">{{ _('December') }} 2020</p>
                       <p class="text-muted">
                           Data Visualization and Communication with Tableau<br>
                           CS1.1: Mastering Data Analysis in Excel<br>
@@ -288,7 +287,7 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
                           <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
                       </span>
                       <h4 class="fw-bold">Mathematics for Machine Learning Specialization</h4>
-                      <p class="text-muted mb-2 fw-bold">December 2020</p>
+                      <p class="text-muted mb-2 fw-bold">{{ _('December') }} 2020</p>
                       <p class="text-muted">
                           CS1.1: Mathematics for Machine Learning: Linear Algebra<br>
                           CS1.2: Mathematics for Machine Learning: Multivariate Calculus<br>
@@ -305,7 +304,7 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
                       <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
                       </span>
                       <h4 class="fw-bold">Applied Data Science with Python Specialization</h4>
-                      <p class="text-muted mb-2 fw-bold">January 2021</p>
+                      <p class="text-muted mb-2 fw-bold">{{ _('January') }} 2021</p>
                       <p class="text-muted">
                       CS1.1: Applied Plotting, Charting & Data Representation in Python<br>
                       CS1.2: Introduction to Data Science in Python<br>
@@ -324,7 +323,7 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
                       <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
                       </span>
                       <h4 class="fw-bold">Deep Learning</h4>
-                      <p class="text-muted mb-2 fw-bold">January 2021</p>
+                      <p class="text-muted mb-2 fw-bold">{{ _('January') }} 2021</p>
                       <p class="text-muted">
                       CS1.1: Convolutional Neural Networks<br>
                       CS1.2: Sequence Models<br>
@@ -343,7 +342,7 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
                       <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
                       </span>
                       <h4 class="fw-bold">Web Development</h4>
-                      <p class="text-muted mb-2 fw-bold">April 2021</p>
+                      <p class="text-muted mb-2 fw-bold">{{ _('April') }} 2021</p>
                       <p class="text-muted">
                       CS2.1: Introduction to web development with HTML5, CSS3, Javascript<br>
                       CS2.2: Advanced web development<br>
@@ -359,7 +358,7 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
                       <i class="fa-solid fa-award text-primary fa-sm fa-fw"></i>
                       </span>
                       <h4 class="fw-bold">Azure AI Fundamentals</h4>
-                      <p class="text-muted mb-2 fw-bold">May 2022</p>
+                      <p class="text-muted mb-2 fw-bold">{{ _('May') }} 2022</p>
                       <p class="text-muted">
                       Microsoft Certified: Azure AI Fundamentals<br>
                       by <em>Microsoft</em>

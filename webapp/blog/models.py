@@ -14,6 +14,7 @@ tags = db.Table('tags',
 
 class Article(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    language_id = db.Column(db.String(2), nullable=False)
     article_title = db.Column(db.String(50), nullable=False)
     article_description = db.Column(db.String(200), nullable=False)
     article_body = db.Column(db.Text(), nullable=False)

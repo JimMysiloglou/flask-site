@@ -1,0 +1,266 @@
+# Greek translations for PROJECT.
+# Copyright (C) 2022 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2022-06-17 16:45+0300\n"
+"PO-Revision-Date: 2022-06-17 16:45+0300\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: el\n"
+"Language-Team: el <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: webapp/blog/controllers.py:64 webapp/portfolio/controllers.py:45
+msgid "The comment has posted successfully"
+msgstr "Το σχόλιο υποβλήθηκε επιτυχώς"
+
+#: webapp/blog/forms.py:9 webapp/main/forms.py:14
+msgid "Name *"
+msgstr "Όνομα *"
+
+#: webapp/blog/forms.py:13 webapp/main/forms.py:15
+msgid "Email *"
+msgstr "Email *"
+
+#: webapp/blog/forms.py:16
+msgid "Comment *"
+msgstr "Σχόλιο *"
+
+#: webapp/blog/forms.py:20 webapp/main/forms.py:19
+msgid "Submit"
+msgstr "Υποβολή"
+
+#: webapp/main/controllers.py:55
+msgid "Your message has submitted succesfully"
+msgstr "Το μήνυμα σας έχει υποβληθεί επιτυχώς"
+
+#: webapp/main/forms.py:9
+msgid "Searched"
+msgstr "Αναζήτηση"
+
+#: webapp/main/forms.py:17
+msgid "Message *"
+msgstr "Μήνυμα *"
+
+#: webapp/templates/index.html:14
+msgid "Mysiloglou Dimitrios"
+msgstr "Μυσιλογλου Δημήτριος"
+
+#: webapp/templates/index.html:15
+msgid "Aspirant Data Scientist"
+msgstr "Επίδοξος Επιστήμων Δεδομένων"
+
+#: webapp/templates/index.html:19
+msgid "Download CV"
+msgstr "Λήψη CV"
+
+#: webapp/templates/index.html:23
+msgid "Contact Me"
+msgstr "Επικοινωνία"
+
+#: webapp/templates/index.html:36
+msgid "About me"
+msgstr "Σχετικά"
+
+#: webapp/templates/index.html:42
+msgid "Welcome to my blog!"
+msgstr "Καλώς ήρθατε στο ιστολόγιο μου!"
+
+#: webapp/templates/index.html:43
+msgid "My studies are in economics and in this blog, I will mainly document"
+msgstr "Οι σπουδές μου βασίζονται στα οικονομικά και σε αυτό το ιστολόγιο θα καταγράψω"
+
+#: webapp/templates/index.html:44
+msgid "my learning journey into data analysis through python and other BI tools."
+msgstr "το εκπαιδευτικό μου ταξίδι στην ανάλυση δεδομένων με την γλώσσα Python και άλλων BI εργαλείων."
+
+#: webapp/templates/index.html:45
+msgid "My other interests are in web development and Raspberry Pi projects."
+msgstr "Άλλα ενδιαφέροντα μου είναι το web development και τα project με Raspberry pi."
+
+#: webapp/templates/index.html:46
+msgid "Thank you for visiting!"
+msgstr "Ευχαριστώ για την επίσκεψη σας!"
+
+#: webapp/templates/index.html:55
+msgid "Age"
+msgstr "Ηλικία"
+
+#: webapp/templates/index.html:59
+msgid "Email"
+msgstr "Email"
+
+#: webapp/templates/index.html:63
+msgid "Cellphone"
+msgstr "Τηλέφωνο"
+
+#: webapp/templates/index.html:67
+msgid "Address"
+msgstr "Διεύθυνση"
+
+#: webapp/templates/index.html:68
+msgid "Piraues - Greece"
+msgstr "Πειραιάς - Ελλάδα"
+
+#: webapp/templates/index.html:76
+msgid "Proficient (4+ years)"
+msgstr "Επιδέξιος (4+ χρόνια)"
+
+#: webapp/templates/index.html:89
+msgid "Advanced (3 years)"
+msgstr "Προχωρημένος (3 χρόνια)"
+
+#: webapp/templates/index.html:108
+msgid "Good (2+ years)"
+msgstr "Καλός (2+ χρόνια)"
+
+#: webapp/templates/index.html:139
+msgid "Learning (1+ year)"
+msgstr "Μαθαίνω (1+ χρόνια)"
+
+#: webapp/templates/index.html:161
+msgid "Education and Work Experience"
+msgstr "Εκπαίδευση και επαγγελματική εμπειρία"
+
+#: webapp/templates/index.html:170
+msgid "Business Economics and Finance"
+msgstr "Οικονομικά και Χρηματοοικονομικά των Επιχειρήσεων"
+
+#: webapp/templates/index.html:171 webapp/templates/index.html:186
+#: webapp/templates/index.html:345
+msgid "April"
+msgstr "Απρίλιος"
+
+#: webapp/templates/index.html:173
+msgid "Bachelor degree in the department of economics science"
+msgstr "Πτυχίο στο τμήμα Οικονομικής Επιστήμης"
+
+#: webapp/templates/index.html:174
+msgid "by Athens University of Economics and Business."
+msgstr "του Οικονομικού Πανεπιστημίου Αθηνών."
+
+#: webapp/templates/index.html:185
+msgid "Full time agent (banking sector)"
+msgstr "Υπάλληλος πλήρης απασχόλησης (τραπεζικός τομέας)"
+
+#: webapp/templates/index.html:189
+msgid ""
+"Contacting customers over overdue payments and advise them on alternative"
+" payment plans."
+msgstr "Επικοινωνία με πελάτες για ληξιπρόθεσμες οφειλές και διαπραγμάτευση για την αποπληρωμή τους."
+
+#: webapp/templates/index.html:201 webapp/templates/index.html:222
+msgid "June"
+msgstr "Ιούνιος"
+
+#: webapp/templates/index.html:221
+msgid "Python Programming"
+msgstr "Python Programming"
+
+#: webapp/templates/index.html:238
+msgid "March"
+msgstr "Μάρτιος"
+
+#: webapp/templates/index.html:254 webapp/templates/index.html:271
+#: webapp/templates/index.html:290
+msgid "December"
+msgstr "Δεκέμβριος"
+
+#: webapp/templates/index.html:307 webapp/templates/index.html:326
+msgid "January"
+msgstr "Ιανουάριος"
+
+#: webapp/templates/index.html:361
+msgid "May"
+msgstr "Μάιος"
+
+#: webapp/templates/blog/articles_by_tag.html:14
+msgid "Articles about"
+msgstr "Άρθρα σχετικά με"
+
+#: webapp/templates/blog/articles_by_tag.html:49
+msgid "Read"
+msgstr "Διαβάστε"
+
+#: webapp/templates/blog/blog.html:14
+msgid "My Blog Articles"
+msgstr "Τα άρθρα μου"
+
+#: webapp/templates/blog/blog.html:15
+msgid ""
+"Here you can read my posts ordered by date or choose by a certain topic "
+"below"
+msgstr "Εδώ μπορείτε να διαβάσετε τα άρθρα μου ταξινομημένα κατά ημερομηνία ή επιλέγοντας ένα συγκεκριμένο θέμα"
+
+#: webapp/templates/blog/blog.html:24
+msgid "Topics"
+msgstr "Θέματα"
+
+#: webapp/templates/blog/blog.html:60
+msgid "Most Recent Post"
+msgstr "Πρόσφατο Άρθρο"
+
+#: webapp/templates/blog/blog.html:78
+msgid "Read more"
+msgstr "Διαβάστε περισσότερα"
+
+#: webapp/templates/blog/blog.html:91
+msgid "Latest posts"
+msgstr "Τελευταία άρθρα"
+
+#: webapp/templates/blog/blog.html:201
+msgid "Previous"
+msgstr "Προηγούμενο"
+
+#: webapp/templates/blog/blog.html:219
+msgid "Next"
+msgstr "Επόμενο"
+
+#: webapp/templates/errors/403.html:11
+msgid "This action is not allowed!"
+msgstr "Αυτή η ενέργεια δεν επιτρέπεται!"
+
+#: webapp/templates/errors/404.html:11
+msgid "This page did not found!"
+msgstr "Αυτή η σελίδα δεν βρέθηκε!"
+
+#: webapp/templates/errors/415.html:11
+msgid "Media type not supported!"
+msgstr "Αυτό το μέσω δεν υποστηρίζεται"
+
+#: webapp/templates/errors/500.html:11
+msgid "The server is not working. Please come back later!"
+msgstr "Ο σερβερ δεν λειτουργεί. Παρακαλώ επιστρέψτε αργότερα!"
+
+#: webapp/templates/portfolio/portfolio.html:14
+msgid "My Portfolio Projects"
+msgstr "Τα προσωπικά μου Project"
+
+#: webapp/templates/portfolio/portfolio.html:15
+msgid "Here you can read about my projects"
+msgstr "Εδώ μπορείτε να διαβάσεται για τα προσωπικά μου project"
+
+#: webapp/templates/portfolio/portfolio.html:38
+msgid "Description"
+msgstr "Περιγραφή"
+
+#: webapp/templates/portfolio/portfolio.html:40
+msgid "The projects you will found bellow are mainly based"
+msgstr "Τα project που θα βρείτε παρακάτω βασίζονται κυρίως"
+
+#: webapp/templates/portfolio/portfolio.html:41
+msgid "on python. All of them have links on github."
+msgstr "στην γλώσσα Python. 'Ολα περιέχουν σύνδεσμο με τον κώδικα στο github."
+
+#: webapp/templates/portfolio/portfolio.html:53
+msgid "My Projects"
+msgstr "Τα Project μου"
+

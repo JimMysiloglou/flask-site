@@ -1,5 +1,5 @@
 import logging
-from random import sample
+from random import sample, choice
 import click
 from .auth.models import User, db
 from .blog.models import Article, Tag
@@ -33,13 +33,14 @@ def generate_tags(n):
 def generate_articles(n, tags):
     user = User.query.first()
     for _ in range(n):
-        article = Article(article_title=faker.sentence(),
+        article = Article(language_id=choice(['en', 'el']),
+                          article_title=faker.sentence(),
                           article_description=faker.paragraph(),
                           article_body=faker.text(max_nb_chars=1000),
                           github_link=faker.url(),
                           date_created = faker.past_date(),
                           user_id=user.id,
-                          tags=[tags[i] for i in sample(range(0, 14), 3)]
+                          tags=[tags[i] for i in sample(range(14), 3)]
                           )
         try:
             db.session.add(article)
@@ -52,7 +53,8 @@ def generate_articles(n, tags):
 def generate_projects(n):
     user = User.query.first()
     for _ in range(n):
-        project = Project(project_title=faker.sentence(),
+        project = Project(language_id=choice(['en', 'el']),
+                          project_title=faker.sentence(),
                           project_description=faker.paragraph(),
                           project_body=faker.text(max_nb_chars=1000),
                           github_link=faker.url(),

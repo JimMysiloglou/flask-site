@@ -6,6 +6,7 @@ PATTERN = "(?<=id=[\u0027\u0022])[a-zA-z]+(?=[\u0027\u0022])"
 
 class Project(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    language_id = db.Column(db.String(2), nullable=False)
     project_title = db.Column(db.String(50), nullable=False)
     project_description = db.Column(db.String(200), nullable=False)
     project_body = db.Column(db.Text(), nullable=False)

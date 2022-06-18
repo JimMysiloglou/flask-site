@@ -18,11 +18,9 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
     />
 
-    <!-- Material Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/mdb.min.css') }}">
-
-    <!-- My stylesheet -->
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    {% assets "main_css" %}
+    <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
+    {% endassets %}
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
@@ -57,7 +55,7 @@
                 <div class="col-lg-8 text-center text-lg-start mb-3 m-lg-0">
                   <img src="{{ article.author.gravatar(size=100) }}" class="rounded-5 shadow-1-strong me-2"
                     height="35" alt="" loading="lazy" />
-                  <span> Published <u>{{ article.date_created.strftime("%Y-%m-%d") }}</u> by</span>
+                  <span> {{ _('Published') }} <u>{{ article.date_created.strftime("%Y-%m-%d") }}</u>{{ _('by') }}</span>
                   <a href="" class="text-dark">{{ article.author.name }}</a>
                 </div>
                 {% if article.github_link %}
@@ -79,7 +77,7 @@
   
             <!--Section: Share buttons-->
             <section class="text-center border-top border-bottom py-4 mb-4">
-              <p><strong>Share with your friends:</strong></p>
+              <p><strong>{{ _('Share with your friends') }}:</strong></p>
   
               <button type="button" class="btn btn-primary me-1" style="background-color: #3b5998;">
                 <i class="fab fa-facebook-f"></i>
@@ -91,14 +89,14 @@
                 <i class="fab fa-linkedin"></i>
               </button>
               <button type="button" class="btn btn-primary me-1">
-                <i class="fas fa-comments me-2"></i>Add comment
+                <i class="fas fa-comments me-2"></i>{{ _('Add comment') }}
               </button>
             </section>
             <!--Section: Share buttons-->
   
             <!--Section: Comments-->
             <section id="comments" class="border-bottom mb-3">
-              <p class="text-center"><strong>Comments: {{ article.comments | length}}</strong></p>
+              <p class="text-center"><strong>{{ _('Comments') }}: {{ article.comments | length}}</strong></p>
               
               {% if article.comments %}
                 {% for comment in article.comments %}
@@ -145,7 +143,7 @@
               <div class="container">
                 <div class="row justify-content-center">
                   <div class="col-md-8">
-                    <p class="text-center"><strong>Leave a comment</strong></p>
+                    <p class="text-center"><strong>{{ _('Leave a comment') }}</strong></p>
                         <form method="POST" enctype="multipart/form-data">
                           {{ form.hidden_tag() }}
                       <!-- Name input -->
@@ -211,10 +209,10 @@
               <div id="scrollspy" class="sticky-top d-sm-none d-md-block" style="top: 80px;">
                 <ul class="nav flex-column nav-pills menu-sidebar">
                   <li class="nav-item">
-                    <a class="nav-link" href="#start">Start</a>
+                    <a class="nav-link" href="#start">{{ _('Start') }}</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#content">Content</a>
+                    <a class="nav-link" href="#content">{{ _('Content') }}</a>
                     {% if article.sections %}
                     <ul class="nav flex-column ps-3">
                       {% for id, section in article.sections.items() %}
@@ -226,7 +224,7 @@
                     {% endif %}
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#comments">Comments</a>
+                    <a class="nav-link" href="#comments">{{ _('Comments') }}</a>
                   </li>
                 </ul>
               </div>
@@ -241,9 +239,9 @@
   {% include "footer.html" %}
 
     <!-- MDB -->
-    <script type="text/javascript" src="{{ url_for('static', filename='js/mdb.min.js') }}"></script>
-    <!-- Custom scripts -->
-    <script type="text/javascript" src="{{ url_for('static', filename='js/my_script.js') }}"></script>
+    {% assets "main_js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
 </body>
 
 </html>

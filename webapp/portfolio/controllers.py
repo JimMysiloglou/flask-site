@@ -3,11 +3,13 @@ from flask import (render_template,
     Blueprint,
     flash,
     redirect,
-    url_for
+    url_for,
+    session
 )
 from .models import Project, db
 from webapp.blog.models import Comment
 from webapp.blog.forms import CommentForm
+from flask_babel import _
 
 portfolio_blueprint = Blueprint(
     'portfolio',
@@ -18,7 +20,8 @@ portfolio_blueprint = Blueprint(
 
 @portfolio_blueprint.route('/')
 def portfolio():
-    projects  = Project.query.order_by(Project.date_created.desc()).all()
+    lang = session['locale'] or 'el'
+    projects  = Project.query.filter_by(language_id=lang).order_by(Project.date_created.desc()).all()
     return render_template("portfolio.html", projects=projects)
 
 
@@ -41,7 +44,7 @@ def full_project(project_id):
         db.session.add(comment)
         db.session.commit()
 
-        flash("The comment has posted successfully", "success")
+        flash(_("The comment has posted successfully"), "success")
         return redirect(url_for("portfolio.full_project", project_id=project_id, _anchor='comments'))
 
     return render_template("full_project.html", project=project, form=form)

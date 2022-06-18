@@ -11,14 +11,6 @@ class Config(object):
     CKEDITOR_FILE_UPLOADER = 'auth.upload'
     UPLOADED_PATH = os.path.join(basedir, 'static/images/')
 
-    MAIL_SERVER = "smtp.gmail.com"
-    MAIL_PORT = 465
-    MAIL_USE_SSL=True
-    SMTP_SERVER = "smtp.gmail.com"
-    SMTP_USER = "someemail@gmail.com"
-    SMTP_PASSWORD = "password"
-    SMTP_FROM = "from@flask.com"
-
 class ProdConfig(Config):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
