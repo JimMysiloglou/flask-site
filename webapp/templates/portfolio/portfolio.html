@@ -11,8 +11,12 @@ style="background-image: url('/static/images/portfolio_jumbotron.jpg');">
  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
   <div class="d-flex justify-content-center align-items-center h-100">
     <div class="text-white">
-          <h1 class="mb-3 h2">{{ _('My Portfolio Projects') }}</h1>
-          <p class="mb-3">{{ _('Here you can read about my projects') }}</p>
+          <h1 class="mb-3 h2">{{ _('My Projects') }}</h1>
+          <p class="text-white">
+            {{ _('Below you will find some of my projects, mostly about data analysis') }}<br>
+            {{ _('I mainly use Python, SQL, and Tableau.') }}<br>
+            {{ _('All of them include a GitHub link for the source code.') }}
+          </p>
         </div>
       </div>
     </div>
@@ -22,35 +26,12 @@ style="background-image: url('/static/images/portfolio_jumbotron.jpg');">
 {% block content %}
 <main class="my-5">
     <div class="container">
-        <!--Section: Content-->
-        <section>
-          <div class="row">
-            <div class="col-md-6 gx-5 mb-4">
-              <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
-                <img src="https://mdbootstrap.com/img/new/slides/031.jpg" class="img-fluid" />
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </a>
-              </div>
-            </div>
   
-            <div class="col-md-6 gx-5 mb-4">
-              <h4><strong>{{ _('Description') }}</strong></h4>
-              <p class="text-muted">
-                {{ _('The projects you will found bellow are mainly based') }}<br>
-                {{ _('on python. All of them have links on github.') }}
-              </p>
-            </div>
-          </div>
-        </section>
-        <!--Section: Content-->
-  
-        <hr class="my-5" />
+        
         
         {% if projects %}
         <!--Section: Content-->
         <section class="text-center">
-          <h4 class="mb-5"><strong>{{ _('My Projects') }}</strong></h4>
           {% for row in projects | batch(3, '&nbsp;') %}
 
                 <div class="row">

@@ -45,9 +45,10 @@ def contact():
     if form.validate_on_submit():
         name = form.name.data
         email = form.email.data
+        subject = form.subject.data
         message = form.message.data
 
-        message = Message(name=name, email=email, message=message)
+        message = Message(name=name, email=email, subject=subject, message=message)
 
         db.session.add(message)
         db.session.commit()

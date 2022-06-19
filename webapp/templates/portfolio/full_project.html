@@ -55,7 +55,7 @@
                 <div class="col-lg-8 text-center text-lg-start mb-3 m-lg-0">
                   <img src="{{ project.author.gravatar(size=100) }}" class="rounded-5 shadow-1-strong me-2"
                     height="35" alt="" loading="lazy" />
-                  <span>{{ _('Published') }}<u>{{ project.date_created.strftime("%Y-%m-%d") }}</u>{{ _('by') }}</span>
+                  <span>{{ _('Published') }}<u>{{ project.date_created.strftime("%Y-%m-%d") }}</u>{{ _(' by') }}</span>
                   <a href="" class="text-dark">{{ project.author.name }}</a>
                 </div>
                 {% if project.github_link %}
@@ -87,9 +87,6 @@
               </a>
               <button type="button" class="btn btn-primary me-1" style="background-color: #0082ca;">
                 <i class="fab fa-linkedin"></i>
-              </button>
-              <button type="button" class="btn btn-primary me-1">
-                <i class="fas fa-comments me-2"></i>{{ _('Add comment') }}
               </button>
             </section>
             <!--Section: Share buttons-->

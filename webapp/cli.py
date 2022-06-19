@@ -5,6 +5,8 @@ from .auth.models import User, db
 from .blog.models import Article, Tag
 from .portfolio.models import Project
 from faker import Faker
+import os
+from getpass import getpass
 
 log = logging.getLogger(__name__)
 
@@ -70,11 +72,16 @@ def generate_projects(n):
 
 
 def register(app):
-    @app.cli.command('create-user')
-    @click.argument('name')
-    @click.argument('email')
-    @click.argument('password')
-    def create_user(name, email, password):
+    @app.cli.command('create-admin')
+    def create_user():
+        if User.query.first():
+            create = input('An admin user already exists! Create another? (y/n): ')
+            if create == 'n':
+                return
+        name = input('Enter name: ')
+        email = input('Enter email: ')
+        password = getpass()
+        assert password == getpass('Password (again):')
         user = User(name=name, email=email, password=password)
         try:
             db.session.add(user)
@@ -100,6 +107,36 @@ def register(app):
             db.session.rollback()
 
     @app.cli.command('test-data')
-    def text_data():
+    def test_data():
         generate_articles(50, generate_tags(15))
         generate_projects(15)
+
+    @app.cli.group()
+    def translate():
+        """Translation and localization commands."""
+        pass
+
+    @translate.command()
+    @click.argument('lang')
+    def init(lang):
+        """Initialize a new language."""
+        if os.system('pybabel extract -F babel/babel.cfg -k _l -o babel/messages.pot .'):
+            raise RuntimeError('extract command failed')
+        if os.system(f'pybabel init -i babel/messages.pot -d webapp/translations -l {lang}'):
+            raise RuntimeError('init command failed')
+        os.remove('babel/messages.pot')
+
+    @translate.command()
+    def update():
+        """Update all languages."""
+        if os.system('pybabel extract -F babel/babel.cfg -k _l -o babel/messages.pot .'):
+            raise RuntimeError('extract command failed')
+        if os.system('pybabel update -i babel/messages.pot -d webapp/translations'):
+            raise RuntimeError('update command failed')
+        os.remove('babel/messages.pot')
+
+    @translate.command()
+    def compile():
+        """Compile all languages."""
+        if os.system('pybabel compile -d webapp/translations'):
+            raise RuntimeError('compile command failed')

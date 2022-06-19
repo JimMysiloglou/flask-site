@@ -14,6 +14,7 @@ class ContactForm(FlaskForm):
     name = StringField(label=_l('Name *'), validators=[DataRequired()])
     email = StringField(label=_l('Email *'), validators=[DataRequired(),
                                                 Email(granular_message=True)])
+    subject = StringField(label=_l('Subject'))
     message = TextAreaField(label=_l('Message *'), validators=[DataRequired(),
                                                     Length(min=5, max=500)])
     submit = SubmitField(label=_l('Submit'))

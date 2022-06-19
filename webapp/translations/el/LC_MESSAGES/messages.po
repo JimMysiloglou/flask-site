@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-06-17 16:45+0300\n"
-"PO-Revision-Date: 2022-06-17 16:45+0300\n"
+"POT-Creation-Date: 2022-06-19 20:15+0300\n"
+"PO-Revision-Date: 2022-06-19 18:12+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: el\n"
 "Language-Team: el <LL@li.org>\n"
@@ -18,9 +18,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.10.3\n"
 
-#: webapp/blog/controllers.py:64 webapp/portfolio/controllers.py:45
+#: webapp/blog/controllers.py:68 webapp/portfolio/controllers.py:47
 msgid "The comment has posted successfully"
-msgstr "Το σχόλιο υποβλήθηκε επιτυχώς"
+msgstr "Το σχόλιο έχει υποβληθεί επιτυχώς"
 
 #: webapp/blog/forms.py:9 webapp/main/forms.py:14
 msgid "Name *"
@@ -34,11 +34,11 @@ msgstr "Email *"
 msgid "Comment *"
 msgstr "Σχόλιο *"
 
-#: webapp/blog/forms.py:20 webapp/main/forms.py:19
+#: webapp/blog/forms.py:20 webapp/main/forms.py:20
 msgid "Submit"
 msgstr "Υποβολή"
 
-#: webapp/main/controllers.py:55
+#: webapp/main/controllers.py:56
 msgid "Your message has submitted succesfully"
 msgstr "Το μήνυμα σας έχει υποβληθεί επιτυχώς"
 
@@ -47,48 +47,64 @@ msgid "Searched"
 msgstr "Αναζήτηση"
 
 #: webapp/main/forms.py:17
+msgid "Subject"
+msgstr "Θέμα"
+
+#: webapp/main/forms.py:18
 msgid "Message *"
 msgstr "Μήνυμα *"
 
 #: webapp/templates/index.html:14
 msgid "Mysiloglou Dimitrios"
-msgstr "Μυσιλογλου Δημήτριος"
+msgstr "Μυσιλόγλου Δημήτριος"
 
 #: webapp/templates/index.html:15
-msgid "Aspirant Data Scientist"
-msgstr "Επίδοξος Επιστήμων Δεδομένων"
+msgid "Data analyst | Data Scientist"
+msgstr "Αναλυτής Δεδομένων | Επιστήμονας Δεδομένων"
 
 #: webapp/templates/index.html:19
 msgid "Download CV"
-msgstr "Λήψη CV"
+msgstr "Ληψη CV"
 
 #: webapp/templates/index.html:23
 msgid "Contact Me"
-msgstr "Επικοινωνία"
+msgstr "Επικοινωνια"
 
 #: webapp/templates/index.html:36
 msgid "About me"
 msgstr "Σχετικά"
 
 #: webapp/templates/index.html:42
-msgid "Welcome to my blog!"
-msgstr "Καλώς ήρθατε στο ιστολόγιο μου!"
+msgid "Welcome to my site!"
+msgstr "Καλωσήρθατε στην ιστοσελίδα μου!"
 
 #: webapp/templates/index.html:43
-msgid "My studies are in economics and in this blog, I will mainly document"
-msgstr "Οι σπουδές μου βασίζονται στα οικονομικά και σε αυτό το ιστολόγιο θα καταγράψω"
+msgid ""
+"I made this blog to record my passion for problem solving through data "
+"analysis."
+msgstr ""
+"Δημιούργησα αυτό το ιστολόγιο με σκοπό την καταγραφή του πάθους μου για "
+"την επίλυση προβλημάτων μέσω της ανάλυσης δεδομένων."
 
 #: webapp/templates/index.html:44
-msgid "my learning journey into data analysis through python and other BI tools."
-msgstr "το εκπαιδευτικό μου ταξίδι στην ανάλυση δεδομένων με την γλώσσα Python και άλλων BI εργαλείων."
+msgid ""
+"I hold a Bachelor's degree in Economics and I am experienced in Python, "
+"SQL and Tableau."
+msgstr ""
+"Οι σπουδές μου είναι στα οικονομικά και έχω εμπειρία στην χρήση Python, "
+"SQL και Tableau."
 
 #: webapp/templates/index.html:45
-msgid "My other interests are in web development and Raspberry Pi projects."
-msgstr "Άλλα ενδιαφέροντα μου είναι το web development και τα project με Raspberry pi."
+msgid ""
+"My other interests are web development and creating Linux projects with "
+"Raspberry Pi."
+msgstr ""
+"Υπόλοιπα ενδιαφέροντα μου είναι η ανάπτυξη ιστοσελίδων και η δημιουργία "
+"linux project με την πλακέτα Raspberry Pi."
 
 #: webapp/templates/index.html:46
 msgid "Thank you for visiting!"
-msgstr "Ευχαριστώ για την επίσκεψη σας!"
+msgstr "Ευχαριστώ για την επίσκεψη!"
 
 #: webapp/templates/index.html:55
 msgid "Age"
@@ -104,7 +120,7 @@ msgstr "Τηλέφωνο"
 
 #: webapp/templates/index.html:67
 msgid "Address"
-msgstr "Διεύθυνση"
+msgstr "Τόπος διαμονής"
 
 #: webapp/templates/index.html:68
 msgid "Piraues - Greece"
@@ -112,19 +128,19 @@ msgstr "Πειραιάς - Ελλάδα"
 
 #: webapp/templates/index.html:76
 msgid "Proficient (4+ years)"
-msgstr "Επιδέξιος (4+ χρόνια)"
+msgstr "Άριστη γνώση (4+ χρόνια)"
 
 #: webapp/templates/index.html:89
 msgid "Advanced (3 years)"
 msgstr "Προχωρημένος (3 χρόνια)"
 
 #: webapp/templates/index.html:108
-msgid "Good (2+ years)"
-msgstr "Καλός (2+ χρόνια)"
+msgid "Good (2 years)"
+msgstr "Καλός (2 χρόνια)"
 
 #: webapp/templates/index.html:139
-msgid "Learning (1+ year)"
-msgstr "Μαθαίνω (1+ χρόνια)"
+msgid "Learning (1 year)"
+msgstr "Μαθαίνω (1 χρόνο)"
 
 #: webapp/templates/index.html:161
 msgid "Education and Work Experience"
@@ -132,7 +148,7 @@ msgstr "Εκπαίδευση και επαγγελματική εμπειρία"
 
 #: webapp/templates/index.html:170
 msgid "Business Economics and Finance"
-msgstr "Οικονομικά και Χρηματοοικονομικά των Επιχειρήσεων"
+msgstr "Οικονομική και Χρηματοοικονομικά των επιχειρήσεων"
 
 #: webapp/templates/index.html:171 webapp/templates/index.html:186
 #: webapp/templates/index.html:345
@@ -141,11 +157,11 @@ msgstr "Απρίλιος"
 
 #: webapp/templates/index.html:173
 msgid "Bachelor degree in the department of economics science"
-msgstr "Πτυχίο στο τμήμα Οικονομικής Επιστήμης"
+msgstr "Πτυχίο στο τμήμα της Οικονομικής επιστήμης"
 
 #: webapp/templates/index.html:174
 msgid "by Athens University of Economics and Business."
-msgstr "του Οικονομικού Πανεπιστημίου Αθηνών."
+msgstr "από το Οικονομικό Πανεπιστήμιο Αθηνών."
 
 #: webapp/templates/index.html:185
 msgid "Full time agent (banking sector)"
@@ -155,15 +171,13 @@ msgstr "Υπάλληλος πλήρης απασχόλησης (τραπεζικ
 msgid ""
 "Contacting customers over overdue payments and advise them on alternative"
 " payment plans."
-msgstr "Επικοινωνία με πελάτες για ληξιπρόθεσμες οφειλές και διαπραγμάτευση για την αποπληρωμή τους."
+msgstr ""
+"Διαχείριση ληξιπρόθεσμων οφειλών και διαπραγμάτευση για την αποπληρωμή "
+"τους."
 
 #: webapp/templates/index.html:201 webapp/templates/index.html:222
 msgid "June"
 msgstr "Ιούνιος"
-
-#: webapp/templates/index.html:221
-msgid "Python Programming"
-msgstr "Python Programming"
 
 #: webapp/templates/index.html:238
 msgid "March"
@@ -180,53 +194,100 @@ msgstr "Ιανουάριος"
 
 #: webapp/templates/index.html:361
 msgid "May"
-msgstr "Μάιος"
+msgstr "Μάϊος"
 
 #: webapp/templates/blog/articles_by_tag.html:14
-msgid "Articles about"
-msgstr "Άρθρα σχετικά με"
+msgid "Articles about "
+msgstr "Αρθρα σχετικά με "
 
 #: webapp/templates/blog/articles_by_tag.html:49
+#: webapp/templates/blog/blog.html:121 webapp/templates/blog/blog.html:153
+#: webapp/templates/blog/blog.html:185
 msgid "Read"
-msgstr "Διαβάστε"
+msgstr "Διαβαστε"
+
+#: webapp/templates/blog/articles_by_tag.html:66
+msgid "Other Categories"
+msgstr "'Αλλες Κατηγορίες"
+
+#: webapp/templates/blog/articles_by_tag.html:99
+#: webapp/templates/blog/blog.html:201
+msgid "Previous"
+msgstr "Προηγούμενο"
+
+#: webapp/templates/blog/articles_by_tag.html:117
+#: webapp/templates/blog/blog.html:219
+msgid "Next"
+msgstr "Επόμενο"
 
 #: webapp/templates/blog/blog.html:14
-msgid "My Blog Articles"
-msgstr "Τα άρθρα μου"
+msgid "My Posts"
+msgstr "Τα 'Αρθρα μου"
 
 #: webapp/templates/blog/blog.html:15
 msgid ""
-"Here you can read my posts ordered by date or choose by a certain topic "
-"below"
-msgstr "Εδώ μπορείτε να διαβάσετε τα άρθρα μου ταξινομημένα κατά ημερομηνία ή επιλέγοντας ένα συγκεκριμένο θέμα"
+"You can read my posts ordered by date or choose a certain topic in the "
+"button below"
+msgstr ""
+"Μπορείτε να διαβάσετε τα άρθρα μου ταξινομημένα κατά ημερομηνία "
+"δημιουργίας ή επιλέγοντας ένα θέμα από το κουμπί παρακάτω"
 
 #: webapp/templates/blog/blog.html:24
 msgid "Topics"
-msgstr "Θέματα"
+msgstr "Θεματα"
 
 #: webapp/templates/blog/blog.html:60
 msgid "Most Recent Post"
-msgstr "Πρόσφατο Άρθρο"
+msgstr "Πρόσφατο άρθρο"
 
 #: webapp/templates/blog/blog.html:78
 msgid "Read more"
-msgstr "Διαβάστε περισσότερα"
+msgstr "Διαβαστε περισσοτερα"
 
 #: webapp/templates/blog/blog.html:91
 msgid "Latest posts"
 msgstr "Τελευταία άρθρα"
 
-#: webapp/templates/blog/blog.html:201
-msgid "Previous"
-msgstr "Προηγούμενο"
+#: webapp/templates/blog/full_article.html:58
+#: webapp/templates/portfolio/full_project.html:58
+msgid "Published"
+msgstr "Δημοσιεύτηκε"
 
-#: webapp/templates/blog/blog.html:219
-msgid "Next"
-msgstr "Επόμενο"
+#: webapp/templates/blog/full_article.html:58
+#: webapp/templates/portfolio/full_project.html:58
+msgid " by"
+msgstr " από τον"
+
+#: webapp/templates/blog/full_article.html:80
+#: webapp/templates/portfolio/full_project.html:80
+msgid "Share with your friends"
+msgstr "Μοιράσου το με τους φίλους σου"
+
+#: webapp/templates/blog/full_article.html:96
+#: webapp/templates/blog/full_article.html:224
+#: webapp/templates/portfolio/full_project.html:96
+#: webapp/templates/portfolio/full_project.html:222
+msgid "Comments"
+msgstr "Σχόλια"
+
+#: webapp/templates/blog/full_article.html:143
+#: webapp/templates/portfolio/full_project.html:143
+msgid "Leave a comment"
+msgstr "Αφήστε ένα σχόλιο"
+
+#: webapp/templates/blog/full_article.html:209
+#: webapp/templates/portfolio/full_project.html:207
+msgid "Start"
+msgstr "Αρχή"
+
+#: webapp/templates/blog/full_article.html:212
+#: webapp/templates/portfolio/full_project.html:210
+msgid "Content"
+msgstr "Περιεχόμενο"
 
 #: webapp/templates/errors/403.html:11
 msgid "This action is not allowed!"
-msgstr "Αυτή η ενέργεια δεν επιτρέπεται!"
+msgstr "Δεν επιτρέπεται αυτή η ενέργεια!"
 
 #: webapp/templates/errors/404.html:11
 msgid "This page did not found!"
@@ -234,33 +295,34 @@ msgstr "Αυτή η σελίδα δεν βρέθηκε!"
 
 #: webapp/templates/errors/415.html:11
 msgid "Media type not supported!"
-msgstr "Αυτό το μέσω δεν υποστηρίζεται"
+msgstr "Αυτό το μέσο δεν υποστηρίζεται"
 
 #: webapp/templates/errors/500.html:11
 msgid "The server is not working. Please come back later!"
-msgstr "Ο σερβερ δεν λειτουργεί. Παρακαλώ επιστρέψτε αργότερα!"
+msgstr "Ο εξυπηρετητής δεν λειτουργεί. Παρακαλώ επιστρέψτε αργότερα!"
 
 #: webapp/templates/portfolio/portfolio.html:14
-msgid "My Portfolio Projects"
-msgstr "Τα προσωπικά μου Project"
-
-#: webapp/templates/portfolio/portfolio.html:15
-msgid "Here you can read about my projects"
-msgstr "Εδώ μπορείτε να διαβάσεται για τα προσωπικά μου project"
-
-#: webapp/templates/portfolio/portfolio.html:38
-msgid "Description"
-msgstr "Περιγραφή"
-
-#: webapp/templates/portfolio/portfolio.html:40
-msgid "The projects you will found bellow are mainly based"
-msgstr "Τα project που θα βρείτε παρακάτω βασίζονται κυρίως"
-
-#: webapp/templates/portfolio/portfolio.html:41
-msgid "on python. All of them have links on github."
-msgstr "στην γλώσσα Python. 'Ολα περιέχουν σύνδεσμο με τον κώδικα στο github."
-
-#: webapp/templates/portfolio/portfolio.html:53
+#: webapp/templates/portfolio/portfolio.html:35
 msgid "My Projects"
-msgstr "Τα Project μου"
+msgstr "Τα προτζεκτ μου"
+
+#: webapp/templates/portfolio/portfolio.html:16
+msgid "Below you will find some of my projects, mostly about data analysis"
+msgstr ""
+"Παρακάτω μπορείτε να διαβάσετε μερικά από τα προτζεκτ μου, κυρίως σχετικά"
+" με την ανάλυση δεδομένων"
+
+#: webapp/templates/portfolio/portfolio.html:17
+msgid "I mainly use Python, SQL, and Tableau."
+msgstr "Κυρίως χρησιμοποιώ τις γλώσσες Python, SQL και Tableau"
+
+#: webapp/templates/portfolio/portfolio.html:18
+msgid "All of them include a GitHub link for the source code."
+msgstr "Σε όλα συμπεριλαμβάνονται συνδέσμοι στο GitHub με τον πηγαίο κώδικα."
+
+#~ msgid "by"
+#~ msgstr " από τον"
+
+#~ msgid "Add comment"
+#~ msgstr "Προσθέστε σχόλιο"
 

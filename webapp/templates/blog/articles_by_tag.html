@@ -11,7 +11,7 @@ style="background-image: url('/static/images/by_tag_jumbotron.jpg');">
 <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
     <div class="d-flex justify-content-center align-items-center h-100">
         <div class="text-white">
-            <h1 class="mb-3 h2">{{ _('Articles about') }}<em>{{ main_tag.name }}</em></h1>
+            <h1 class="mb-3 h2">{{ _('Articles about ') }}<em>{{ main_tag.name }}</em></h1>
             <p class="mb-3">{{ main_tag.description }}</p>
         </div>
     </div>
@@ -60,10 +60,10 @@ style="background-image: url('/static/images/by_tag_jumbotron.jpg');">
           <!--Grid column-->
           <div class="col-md-3 mb-4">
             <!--Section: Sidebar-->
-            <section class="sticky-top" style="top: 80px;">
+            <section class="sticky-top d-sm-none d-md-block" style="top: 80px;">
               <!--Section: Other Categories-->
               <section class="text-center border-bottom pb-4 mb-4">
-                <h5>Other Categories</h5>
+                <h5>{{ _('Other Categories') }}</h5>
                 <div class="list-group list-group-light {% if tags|length > 10 %} list-group-small {% endif %}">
                     {% for tag in tags %}
                         {% if tag.id == main_tag.id %}
@@ -96,7 +96,7 @@ style="background-image: url('/static/images/by_tag_jumbotron.jpg');">
           <ul class="pagination pagination-circle justify-content-center">
             
               <li class="page-item {% if not articles.has_prev %} disabled {% endif %}">
-                <a class="page-link" href="{{ url_for('.articles_by_tag', tag_id=main_tag.id, page=articles.prev_num) }}">Previous</a>
+                <a class="page-link" href="{{ url_for('.articles_by_tag', tag_id=main_tag.id, page=articles.prev_num) }}">{{ _('Previous') }}</a>
               </li>
             
             {% for page_number in articles.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
@@ -114,7 +114,7 @@ style="background-image: url('/static/images/by_tag_jumbotron.jpg');">
             {% endfor %}
 
               <li class="page-item {% if not articles.has_next %} disabled {% endif %}">
-                <a class="page-link" href="{{ url_for('.articles_by_tag', tag_id=main_tag.id, page=articles.next_num) }}">Next</a>
+                <a class="page-link" href="{{ url_for('.articles_by_tag', tag_id=main_tag.id, page=articles.next_num) }}">{{ _('Next') }}</a>
               </li>
             
           </ul>

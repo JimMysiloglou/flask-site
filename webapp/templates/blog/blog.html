@@ -11,8 +11,8 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
  <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
   <div class="d-flex justify-content-center align-items-center h-100">
     <div class="text-white">
-          <h1 class="mb-3 h2">{{ _('My Blog Articles') }}</h1>
-          <p class="mb-3">{{ _('Here you can read my posts ordered by date or choose by a certain topic below') }}</p>
+          <h1 class="mb-3 h2">{{ _('My Posts') }}</h1>
+          <p class="mb-3">{{ _('You can read my posts ordered by date or choose a certain topic in the button below') }}</p>
           <div class="dropdown dropend">
             <a
               class="btn btn-outline-light dropdown-toggle"
@@ -118,7 +118,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
                                       <p class="card-text">
                                           {{ row[0].article_description | safe }}
                                       </p>
-                                      <a href="{{ url_for('blog.full_article', article_id=row[0].id) }}" class="btn btn-primary">Read</a>
+                                      <a href="{{ url_for('blog.full_article', article_id=row[0].id) }}" class="btn btn-primary">{{ _('Read') }}</a>
                                   </div>
                                   </div>
                               </div>
@@ -150,7 +150,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
                                       <p class="card-text">
                                           {{ row[1].article_description | safe }}
                                       </p>
-                                      <a href="{{ url_for('blog.full_article', article_id=row[1].id) }}" class="btn btn-primary">Read</a>
+                                      <a href="{{ url_for('blog.full_article', article_id=row[1].id) }}" class="btn btn-primary">{{ _('Read') }}</a>
                                   </div>
                                   </div>
                               </div>
@@ -182,7 +182,7 @@ style="background-image: url('/static/images/blog_jumbotron.jpg');">
                                       <p class="card-text">
                                           {{ row[2].article_description | safe }}
                                       </p>
-                                      <a href="{{ url_for('blog.full_article', article_id=row[2].id) }}" class="btn btn-primary">Read</a>
+                                      <a href="{{ url_for('blog.full_article', article_id=row[2].id) }}" class="btn btn-primary">{{ _('Read') }}</a>
                                   </div>
                                   </div>
                               </div>
