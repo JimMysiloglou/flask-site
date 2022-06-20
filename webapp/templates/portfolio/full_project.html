@@ -30,7 +30,7 @@
 <body data-mdb-spy="scroll"
       data-mdb-target="#scrollspy"
       data-mdb-offset="180"
-      class="full-article">
+      class="full-project">
     <header>
         {% include "navbar.html" %}
 
@@ -79,15 +79,17 @@
             <section class="text-center border-top border-bottom py-4 mb-4">
               <p><strong>{{ _('Share with your friends') }}:</strong></p>
   
-              <button type="button" class="btn btn-primary me-1" style="background-color: #3b5998;">
-                <i class="fab fa-facebook-f"></i>
-              </button>
-              <a href="https://twitter.com/intent/tweet?url=http://127.0.0.1:5000/blog/full_project/{{ project.id }}" type="button" class="btn btn-primary me-1" style="background-color: #55acee;">
+              <div class="fb-share-button" data-href="http://127.0.0.1:5000/portfolio/full_project/{{ project.id }}" data-layout="button" data-size="small" style="display: inline;">
+                <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A5000%2Fportfolio%2Ffull_project%2F1&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore btn btn-primary me-1" style="background-color: #3b5998;"><i class="fab fa-facebook-f"></i></a>
+              </div>
+              
+              <a target="_blank" href="https://twitter.com/share?ref_src=twsrc%5Etfw" type="button" data-text="{{ project.project_description }}" class="btn btn-primary me-1" style="background-color: #55acee;">
                 <i class="fab fa-twitter"></i>
-              </a>
-              <button type="button" class="btn btn-primary me-1" style="background-color: #0082ca;">
+              </a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              
+              <a target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url={http://127.0.0.1:5000/portfolio/full_project/{{ project.id }}}" type="button" class="btn btn-primary me-1" style="background-color: #0082ca;">
                 <i class="fab fa-linkedin"></i>
-              </button>
+              </a>
             </section>
             <!--Section: Share buttons-->
   

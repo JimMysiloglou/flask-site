@@ -30,7 +30,7 @@ def blog():
     articles = Article.query.filter_by(language_id=lang).order_by(Article.date_created.desc()).offset(1).from_self().paginate(per_page=6, page=page)
 
     tags = Tag.query.all()
-    print(session['locale'])
+
     return render_template("blog.html", first_article=first_article, articles=articles, tags=tags)
 
 

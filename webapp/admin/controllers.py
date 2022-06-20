@@ -85,7 +85,7 @@ class ArticleAdminView(CustomModelView):
     }
     column_exclude_list = ('article_body',)
     column_searchable_list = ('article_title', 'article_description')
-    column_filters = ('date_created',)
+    column_filters = ('date_created', 'language_id')
     create_template = 'admin/edit_article.html'
     edit_template = 'admin/edit_article.html'
 
@@ -107,7 +107,7 @@ class ProjectAdminView(CustomModelView):
     }
     column_exclude_list = ('project_body',)
     column_searchable_list = ('project_title', 'project_description')
-    column_filters = ('date_created',)
+    column_filters = ('date_created', 'language_id')
     create_template = 'admin/edit_project.html'
     edit_template = 'admin/edit_project.html'
 
