@@ -251,7 +251,7 @@ msgstr "Τελευταία άρθρα"
 #: webapp/templates/blog/full_article.html:58
 #: webapp/templates/portfolio/full_project.html:58
 msgid "Published"
-msgstr "Δημοσιεύτηκε"
+msgstr "Δημοσιεύτηκε "
 
 #: webapp/templates/blog/full_article.html:58
 #: webapp/templates/portfolio/full_project.html:58

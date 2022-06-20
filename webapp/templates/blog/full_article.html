@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ article.language_id }}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -156,7 +156,7 @@
                         <form method="POST" enctype="multipart/form-data">
                           {{ form.hidden_tag() }}
                       <!-- Name input -->
-                      <div class="form-outline mb-5">
+                      <div class="form-outline mb-4">
                         {% if form.author.errors %}
                           {{ form.author(class="form-control is-invalid") }}
                           {{ form.author.label(class="form-label") }}
@@ -170,7 +170,7 @@
                       </div>
 
                       <!-- Email input -->
-                      <div class="form-outline mb-5">
+                      <div class="form-outline mb-4">
                         {% if form.email.errors %}
                           {{ form.email(class="form-control is-invalid") }}
                           {{ form.email.label(class="form-label") }}
@@ -187,7 +187,7 @@
           
 
                       <!-- Comment input -->
-                      <div class="form-outline mb-5">
+                      <div class="form-outline mb-4">
                           {% if form.text.errors %}
                             {{ form.text(class="form-control is-invalid") }}
                             {{ form.text.label(class="form-label") }}
@@ -198,6 +198,17 @@
                             {{ form.text(class="form-control") }}
                             {{ form.text.label(class="form-label") }}
                           {% endif %}
+                      </div>
+
+                      <!--Google Recaptcha-->
+                      <div class="mb-4">
+                        {% if form.recaptcha.errors %}
+                          {% for error in form.recaptcha.errors %}
+                            <div> {{ error }}</div>
+                          {% endfor %}
+                        {% else %}
+                          {{ form.recaptcha }}
+                        {% endif %}
                       </div>
                       
 

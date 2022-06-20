@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ project.language_id }}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url"           content="{{ url_for('portfolio.full_project', project_id=project.id, _external=True) }}" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="{{ project.project_title }}" />
+    <meta property="og:description"   content="{{ project.project_description }}" />
+    <meta property="og:image"         content="{{ url_for('static', filename='images/project_images/'+ project.project_image) }}" />
     <title>
         {{ project.title }}
     </title>
@@ -31,6 +36,12 @@
       data-mdb-target="#scrollspy"
       data-mdb-offset="180"
       class="full-project">
+      
+      <!-- Load Facebook SDK for JavaScript -->
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" 
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v14.0" 
+      nonce="LSxoSnvW"></script>
     <header>
         {% include "navbar.html" %}
 
@@ -146,7 +157,7 @@
                         <form method="POST" enctype="multipart/form-data">
                           {{ form.hidden_tag() }}
                       <!-- Name input -->
-                      <div class="form-outline mb-5">
+                      <div class="form-outline mb-4">
                         {% if form.author.errors %}
                           {{ form.author(class="form-control is-invalid") }}
                           {{ form.author.label(class="form-label") }}
@@ -160,7 +171,7 @@
                       </div>
 
                       <!-- Email input -->
-                      <div class="form-outline mb-5">
+                      <div class="form-outline mb-4">
                         {% if form.email.errors %}
                           {{ form.email(class="form-control is-invalid") }}
                           {{ form.email.label(class="form-label") }}
@@ -175,7 +186,7 @@
           
 
                       <!-- Comment input -->
-                      <div class="form-outline mb-5">
+                      <div class="form-outline mb-4">
                           {% if form.text.errors %}
                             {{ form.text(class="form-control is-invalid") }}
                             {{ form.text.label(class="form-label") }}
@@ -188,6 +199,16 @@
                           {% endif %}
                       </div>
                       
+                      <!--Google Recaptcha-->
+                      <div class="mb-4">
+                        {% if form.recaptcha.errors %}
+                          {% for error in form.recaptcha.errors %}
+                            <div> {{ error }}</div>
+                          {% endfor %}
+                        {% else %}
+                          {{ form.recaptcha }}
+                        {% endif %}
+                      </div>
 
                       <!-- Submit button -->
                       {{ form.submit(class="btn btn-primary btn-block") }}

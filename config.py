@@ -5,6 +5,8 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string'
     WTF_CSRF_SECRET_KEY = 'another_secret'
+    RECAPTCHA_PUBLIC_KEY = '6Lee0YYgAAAAAAjAxq3Op4uI_WHMLLSvjzaet-QO'
+    RECAPTCHA_PRIVATE_KEY = '6Lee0YYgAAAAAIRg0TOyBxXr6JpMJ-MDn6fk2VGK'
     CKEDITOR_HEIGHT = 400
     CKEDITOR_ENABLE_CODESNIPPET = True
     CKEDITOR_CODE_THEME = 'atelier-heath.light'
