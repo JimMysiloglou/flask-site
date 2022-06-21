@@ -35,6 +35,9 @@ def create_app(object_name):
         from flask_sslify import SSLify
         sslify = SSLify(app)
 
+        from werkzeug.middleware.proxy_fix import ProxyFix
+        app.wsgi_app = ProxyFix(app.wsgi_app)
+
     
 
     return app
