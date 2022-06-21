@@ -2,7 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_assets import Environment, Bundle
-
+import os
 
 db = SQLAlchemy()
 migrate = Migrate()
@@ -48,5 +48,11 @@ def create_app(object_name):
     portfolio_create_module(app)
     admin_create_module(app)
     babel_create_module(app)
+
+    if app.config['SSL_REDIRECT']:
+        from flask_sslify import SSLify
+        sslify = SSLify(app)
+
+    
 
     return app

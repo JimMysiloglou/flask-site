@@ -7,6 +7,7 @@ from .portfolio.models import Project
 from faker import Faker
 import os
 from getpass import getpass
+from flask_migrate import upgrade
 
 log = logging.getLogger(__name__)
 
@@ -140,3 +141,9 @@ def register(app):
         """Compile all languages."""
         if os.system('pybabel compile -d webapp/translations'):
             raise RuntimeError('compile command failed')
+
+    @app.cli.command('deploy')
+    def deploy():
+        """Run deployment tasks."""
+        # migrate database to latest revision
+        upgrade()
