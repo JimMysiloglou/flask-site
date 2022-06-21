@@ -1,7 +1,7 @@
 # Flask Site
 My personal site created with python Flask microframework featuring blog and portfolio sections.
 
-I intent to deploy the site on Heroku platform.
+It is deployed on Heroku platform in address https://jimmysiloglou.herokuapp.com
 
 Some of the modules I used for the creation are:
 - Flask-Admin 
