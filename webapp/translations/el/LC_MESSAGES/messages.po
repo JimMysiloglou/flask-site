@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-06-19 20:15+0300\n"
+"POT-Creation-Date: 2022-06-22 20:43+0300\n"
 "PO-Revision-Date: 2022-06-19 18:12+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: el\n"
@@ -34,7 +34,7 @@ msgstr "Email *"
 msgid "Comment *"
 msgstr "Σχόλιο *"
 
-#: webapp/blog/forms.py:20 webapp/main/forms.py:20
+#: webapp/blog/forms.py:22 webapp/main/forms.py:20
 msgid "Submit"
 msgstr "Υποβολή"
 
@@ -151,7 +151,6 @@ msgid "Business Economics and Finance"
 msgstr "Οικονομική και Χρηματοοικονομικά των επιχειρήσεων"
 
 #: webapp/templates/index.html:171 webapp/templates/index.html:186
-#: webapp/templates/index.html:345
 msgid "April"
 msgstr "Απρίλιος"
 
@@ -176,25 +175,28 @@ msgstr ""
 "τους."
 
 #: webapp/templates/index.html:201 webapp/templates/index.html:222
+#: webapp/templates/index.html:429
 msgid "June"
 msgstr "Ιούνιος"
 
-#: webapp/templates/index.html:238
-msgid "March"
-msgstr "Μάρτιος"
-
-#: webapp/templates/index.html:254 webapp/templates/index.html:271
-#: webapp/templates/index.html:290
-msgid "December"
-msgstr "Δεκέμβριος"
-
-#: webapp/templates/index.html:307 webapp/templates/index.html:326
+#: webapp/templates/index.html:238 webapp/templates/index.html:342
+#: webapp/templates/index.html:361 webapp/templates/index.html:397
 msgid "January"
 msgstr "Ιανουάριος"
 
-#: webapp/templates/index.html:361
+#: webapp/templates/index.html:257
+msgid "March"
+msgstr "Μάρτιος"
+
+#: webapp/templates/index.html:273 webapp/templates/index.html:380
+#: webapp/templates/index.html:414
 msgid "May"
 msgstr "Μάϊος"
+
+#: webapp/templates/index.html:289 webapp/templates/index.html:306
+#: webapp/templates/index.html:325
+msgid "December"
+msgstr "Δεκέμβριος"
 
 #: webapp/templates/blog/articles_by_tag.html:14
 msgid "Articles about "
@@ -248,40 +250,40 @@ msgstr "Διαβαστε περισσοτερα"
 msgid "Latest posts"
 msgstr "Τελευταία άρθρα"
 
-#: webapp/templates/blog/full_article.html:58
-#: webapp/templates/portfolio/full_project.html:58
+#: webapp/templates/blog/full_article.html:71
+#: webapp/templates/portfolio/full_project.html:71
 msgid "Published"
 msgstr "Δημοσιεύτηκε "
 
-#: webapp/templates/blog/full_article.html:58
-#: webapp/templates/portfolio/full_project.html:58
+#: webapp/templates/blog/full_article.html:71
+#: webapp/templates/portfolio/full_project.html:71
 msgid " by"
 msgstr " από τον"
 
-#: webapp/templates/blog/full_article.html:80
-#: webapp/templates/portfolio/full_project.html:80
+#: webapp/templates/blog/full_article.html:93
+#: webapp/templates/portfolio/full_project.html:93
 msgid "Share with your friends"
 msgstr "Μοιράσου το με τους φίλους σου"
 
-#: webapp/templates/blog/full_article.html:96
-#: webapp/templates/blog/full_article.html:224
-#: webapp/templates/portfolio/full_project.html:96
-#: webapp/templates/portfolio/full_project.html:222
+#: webapp/templates/blog/full_article.html:110
+#: webapp/templates/blog/full_article.html:249
+#: webapp/templates/portfolio/full_project.html:111
+#: webapp/templates/portfolio/full_project.html:247
 msgid "Comments"
 msgstr "Σχόλια"
 
-#: webapp/templates/blog/full_article.html:143
-#: webapp/templates/portfolio/full_project.html:143
+#: webapp/templates/blog/full_article.html:157
+#: webapp/templates/portfolio/full_project.html:158
 msgid "Leave a comment"
 msgstr "Αφήστε ένα σχόλιο"
 
-#: webapp/templates/blog/full_article.html:209
-#: webapp/templates/portfolio/full_project.html:207
+#: webapp/templates/blog/full_article.html:234
+#: webapp/templates/portfolio/full_project.html:232
 msgid "Start"
 msgstr "Αρχή"
 
-#: webapp/templates/blog/full_article.html:212
-#: webapp/templates/portfolio/full_project.html:210
+#: webapp/templates/blog/full_article.html:237
+#: webapp/templates/portfolio/full_project.html:235
 msgid "Content"
 msgstr "Περιεχόμενο"
 
@@ -302,7 +304,6 @@ msgid "The server is not working. Please come back later!"
 msgstr "Ο εξυπηρετητής δεν λειτουργεί. Παρακαλώ επιστρέψτε αργότερα!"
 
 #: webapp/templates/portfolio/portfolio.html:14
-#: webapp/templates/portfolio/portfolio.html:35
 msgid "My Projects"
 msgstr "Τα προτζεκτ μου"
 
