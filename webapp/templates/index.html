@@ -14,7 +14,8 @@ style="background-image: url('/static/images/index_jumbotron.jpg');">
           <h1 class="mb-3">{{ _('Mysiloglou Dimitrios') }}</h1>
               <h5 class="mb-4">{{ _('Data analyst | Data Scientist') }}</h5>
           <a class="btn btn-outline-light btn-lg m-2"
-          href="#"
+          target="_blank"
+          href="{{ url_for('static', filename='CV_' + session['locale'] + '.pdf') }}"
           role="button"
           >{{ _('Download CV') }}</a>
           <a class="btn btn-outline-light btn-lg m-2"
