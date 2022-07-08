@@ -18,10 +18,15 @@ class Config(object):
 
 class ProdConfig(Config):
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL', '').replace(
-        'postgres://', 'postgresql://') or \
-        'sqlite:///' + os.path.join(basedir, 'app.db')
-    SSL_REDIRECT = bool(os.environ.get('DYNO'))
+    SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}".format(
+    username=os.environ.get("db_username"),
+    password=os.environ.get("db_password"),
+    hostname=os.environ.get("db_hostname"),
+    databasename=os.environ.get("db_name"),
+    )
+
+    SQLALCHEMY_POOL_RECYCLE = 299
+    SSL_REDIRECT = bool(os.environ.get('PYTHONANYWHERE_DOMAIN'))
 
         
 
